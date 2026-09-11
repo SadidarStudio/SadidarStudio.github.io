@@ -1,0 +1,6 @@
+{
+  "name": "سدیدار",
+  "description": "سدیدار تجربه‌هایی می‌سازد که از تماشا فراتر می‌روند؛ تجربه‌هایی درست، معنادار و اثرگذار برای فرهنگ، آموزش و سرگرمی تعاملی.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

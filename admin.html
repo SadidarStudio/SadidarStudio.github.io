@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت سدیدار</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+    <style>
+        :root {
+            --bg-dark: #011F41;
+            --bg-card: #032b59;
+            --accent-teal: #21B9C6;
+            --accent-gold: #EBA430;
+            --text-white: #FFFFFF;
+            --text-muted: #a0aec0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 { margin-bottom: 20px; color: var(--accent-gold); text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: var(--accent-teal); font-weight: bold; }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: white;
+        }
+        button {
+            padding: 12px 24px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #1da2ae; }
+        #auth-section, #admin-section { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="auth-section">
+    <h1>ورود به پنل مدیریت</h1>
+    <div class="form-group">
+        <label>ایمیل</label>
+        <input type="email" id="email" placeholder="admin@sadidar.com">
+    </div>
+    <div class="form-group">
+        <label>رمز عبور</label>
+        <input type="password" id="password" placeholder="********">
+    </div>
+    <button onclick="login()">ورود</button>
+</div>
+
+<div class="container" id="admin-section">
+    <h1>ویرایش محتوای سایت</h1>
+    <button onclick="logout()" style="background: #e74c3c; color: white; margin-bottom: 20px;">خروج</button>
+    <div id="status" style="color: var(--accent-gold); margin-bottom: 15px;"></div>
+    
+    
+    <div class="form-group">
+        <label>عنوان اصلی (هدر)</label>
+        <input type="text" id="heroTitle" />
+    </div>
+    <div class="form-group">
+        <label>متن معرفی زیر عنوان</label>
+        <textarea id="heroText" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label>متن معرفی (درباره ما)</label>
+        <textarea id="aboutText" rows="6"></textarea>
+    </div>
+
+    
+    
+    
+    <div class="form-group" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <h3>خدمات (۶ آیتم)</h3>
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>خدمت 1</h4>
+        <label>عنوان</label>
+        <input type="text" id="s1Title" />
+        <label style="margin-top:5px;">زیرعنوان</label>
+        <input type="text" id="s1Subtitle" />
+        <label style="margin-top:5px;">توضیحات (پاپ‌آپ)</label>
+        <textarea id="s1Desc" rows="3"></textarea>
+        <label style="margin-top:5px;">آیکون (ایموجی)</label>
+        <input type="text" id="s1Icon" />
+        <label style="margin-top:5px;">لینک تصویر (پاپ‌آپ)</label>
+        <input type="text" id="s1Img" dir="ltr" />
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>خدمت 2</h4>
+        <label>عنوان</label>
+        <input type="text" id="s2Title" />
+        <label style="margin-top:5px;">زیرعنوان</label>
+        <input type="text" id="s2Subtitle" />
+        <label style="margin-top:5px;">توضیحات (پاپ‌آپ)</label>
+        <textarea id="s2Desc" rows="3"></textarea>
+        <label style="margin-top:5px;">آیکون (ایموجی)</label>
+        <input type="text" id="s2Icon" />
+        <label style="margin-top:5px;">لینک تصویر (پاپ‌آپ)</label>
+        <input type="text" id="s2Img" dir="ltr" />
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>خدمت 3</h4>
+        <label>عنوان</label>
+        <input type="text" id="s3Title" />
+        <label style="margin-top:5px;">زیرعنوان</label>
+        <input type="text" id="s3Subtitle" />
+        <label style="margin-top:5px;">توضیحات (پاپ‌آپ)</label>
+        <textarea id="s3Desc" rows="3"></textarea>
+        <label style="margin-top:5px;">آیکون (ایموجی)</label>
+        <input type="text" id="s3Icon" />
+        <label style="margin-top:5px;">لینک تصویر (پاپ‌آپ)</label>
+        <input type="text" id="s3Img" dir="ltr" />
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>خدمت 4</h4>
+        <label>عنوان</label>
+        <input type="text" id="s4Title" />
+        <label style="margin-top:5px;">زیرعنوان</label>
+        <input type="text" id="s4Subtitle" />
+        <label style="margin-top:5px;">توضیحات (پاپ‌آپ)</label>
+        <textarea id="s4Desc" rows="3"></textarea>
+        <label style="margin-top:5px;">آیکون (ایموجی)</label>
+        <input type="text" id="s4Icon" />
+        <label style="margin-top:5px;">لینک تصویر (پاپ‌آپ)</label>
+        <input type="text" id="s4Img" dir="ltr" />
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>خدمت 5</h4>
+        <label>عنوان</label>
+        <input type="text" id="s5Title" />
+        <label style="margin-top:5px;">زیرعنوان</label>
+        <input type="text" id="s5Subtitle" />
+        <label style="margin-top:5px;">توضیحات (پاپ‌آپ)</label>
+        <textarea id="s5Desc" rows="3"></textarea>
+        <label style="margin-top:5px;">آیکون (ایموجی)</label>
+        <input type="text" id="s5Icon" />
+        <label style="margin-top:5px;">لینک تصویر (پاپ‌آپ)</label>
+        <input type="text" id="s5Img" dir="ltr" />
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>خدمت 6</h4>
+        <label>عنوان</label>
+        <input type="text" id="s6Title" />
+        <label style="margin-top:5px;">زیرعنوان</label>
+        <input type="text" id="s6Subtitle" />
+        <label style="margin-top:5px;">توضیحات (پاپ‌آپ)</label>
+        <textarea id="s6Desc" rows="3"></textarea>
+        <label style="margin-top:5px;">آیکون (ایموجی)</label>
+        <input type="text" id="s6Icon" />
+        <label style="margin-top:5px;">لینک تصویر (پاپ‌آپ)</label>
+        <input type="text" id="s6Img" dir="ltr" />
+    </div>
+
+    <div class="form-group" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <h3>پروژه‌ها (۲ آیتم)</h3>
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>پروژه 1</h4>
+        <label>عنوان</label>
+        <input type="text" id="p1Title" />
+        <label style="margin-top:5px;">تگ</label>
+        <input type="text" id="p1Tag" />
+        <label style="margin-top:5px;">نقش تیم</label>
+        <input type="text" id="p1Role" />
+        <label style="margin-top:5px;">دستاورد</label>
+        <input type="text" id="p1Achieve" />
+        <label style="margin-top:5px;">لینک تصویر</label>
+        <input type="text" id="p1Img" dir="ltr" />
+    </div>
+
+    <div class="form-group" style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+        <h4>پروژه 2</h4>
+        <label>عنوان</label>
+        <input type="text" id="p2Title" />
+        <label style="margin-top:5px;">تگ</label>
+        <input type="text" id="p2Tag" />
+        <label style="margin-top:5px;">نقش تیم</label>
+        <input type="text" id="p2Role" />
+        <label style="margin-top:5px;">دستاورد</label>
+        <input type="text" id="p2Achieve" />
+        <label style="margin-top:5px;">لینک تصویر</label>
+        <input type="text" id="p2Img" dir="ltr" />
+    </div>
+<div class="form-group" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <h3>اعضای تیم</h3>
+    </div>
+    <div class="form-group">
+        <label>نام عضو اول</label>
+        <input type="text" id="team1Name" />
+        <label style="margin-top:5px;">سمت عضو اول</label>
+        <input type="text" id="team1Role" />
+        <label style="margin-top:5px;">لینک رزومه عضو اول</label>
+        <input type="text" id="team1Link" dir="ltr" />
+    </div>
+    <div class="form-group">
+        <label>نام عضو دوم</label>
+        <input type="text" id="team2Name" />
+        <label style="margin-top:5px;">سمت عضو دوم</label>
+        <input type="text" id="team2Role" />
+        <label style="margin-top:5px;">لینک رزومه عضو دوم</label>
+        <input type="text" id="team2Link" dir="ltr" />
+    </div>
+    <div class="form-group">
+        <label>نام عضو سوم</label>
+        <input type="text" id="team3Name" />
+        <label style="margin-top:5px;">سمت عضو سوم</label>
+        <input type="text" id="team3Role" />
+        <label style="margin-top:5px;">لینک رزومه عضو سوم</label>
+        <input type="text" id="team3Link" dir="ltr" />
+    </div>
+    <div class="form-group">
+        <label>نام عضو چهارم</label>
+        <input type="text" id="team4Name" />
+        <label style="margin-top:5px;">سمت عضو چهارم</label>
+        <input type="text" id="team4Role" />
+        <label style="margin-top:5px;">لینک رزومه عضو چهارم</label>
+        <input type="text" id="team4Link" dir="ltr" />
+    </div>
+    <div class="form-group">
+        <label>نام عضو پنجم</label>
+        <input type="text" id="team5Name" />
+        <label style="margin-top:5px;">سمت عضو پنجم</label>
+        <input type="text" id="team5Role" />
+        <label style="margin-top:5px;">لینک رزومه عضو پنجم</label>
+        <input type="text" id="team5Link" dir="ltr" />
+    </div>
+<button onclick="saveData()">ذخیره تغییرات</button>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      projectId: "exalted-avatar-12ts5",
+      appId: "1:148363930461:web:ff517777a657869c70d6b4",
+      apiKey: "AIzaSyABrpR6TvQbu68HiG9do3pK0soWNcW4KcQ",
+      authDomain: "exalted-avatar-12ts5.firebaseapp.com",
+      storageBucket: "exalted-avatar-12ts5.firebasestorage.app",
+      messagingSenderId: "148363930461"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app, "ai-studio-b0edc278-9d9f-4574-988b-15d1c1e8f3d2");
+
+    const authSection = document.getElementById('auth-section');
+    const adminSection = document.getElementById('admin-section');
+    const statusDiv = document.getElementById('status');
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            authSection.style.display = 'none';
+            adminSection.style.display = 'block';
+            loadData();
+        } else {
+            authSection.style.display = 'block';
+            adminSection.style.display = 'none';
+        }
+    });
+
+    
+    window.login = () => {
+        const email = document.getElementById('email').value;
+        const pass = document.getElementById('password').value;
+        signInWithEmailAndPassword(auth, email, pass)
+            .catch((error) => alert('خطا در ورود: ' + error.message));
+    };
+
+    window.signup = () => {
+        const email = document.getElementById('email').value;
+        const pass = document.getElementById('password').value;
+        createUserWithEmailAndPassword(auth, email, pass)
+            .then(() => alert('ثبت نام موفقیت آمیز بود. حالا وارد می‌شوید.'))
+            .catch((error) => alert('خطا در ثبت نام: ' + error.message));
+    };
+
+
+    window.logout = () => {
+        signOut(auth);
+    };
+
+    async function loadData() {
+        statusDiv.innerText = 'در حال بارگذاری...';
+        try {
+            const docRef = doc(db, "content", "main");
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                
+                document.getElementById('heroTitle').value = data.heroTitle || '';
+                document.getElementById('heroText').value = data.heroText || '';
+                document.getElementById('aboutText').value = data.aboutText || '';
+                document.getElementById('s1Title').value = data.s1Title || '';
+                document.getElementById('s1Subtitle').value = data.s1Subtitle || '';
+                document.getElementById('s1Desc').value = data.s1Desc || '';
+                document.getElementById('s1Icon').value = data.s1Icon || '';
+                document.getElementById('s1Img').value = data.s1Img || '';
+                document.getElementById('s2Title').value = data.s2Title || '';
+                document.getElementById('s2Subtitle').value = data.s2Subtitle || '';
+                document.getElementById('s2Desc').value = data.s2Desc || '';
+                document.getElementById('s2Icon').value = data.s2Icon || '';
+                document.getElementById('s2Img').value = data.s2Img || '';
+                document.getElementById('s3Title').value = data.s3Title || '';
+                document.getElementById('s3Subtitle').value = data.s3Subtitle || '';
+                document.getElementById('s3Desc').value = data.s3Desc || '';
+                document.getElementById('s3Icon').value = data.s3Icon || '';
+                document.getElementById('s3Img').value = data.s3Img || '';
+                document.getElementById('s4Title').value = data.s4Title || '';
+                document.getElementById('s4Subtitle').value = data.s4Subtitle || '';
+                document.getElementById('s4Desc').value = data.s4Desc || '';
+                document.getElementById('s4Icon').value = data.s4Icon || '';
+                document.getElementById('s4Img').value = data.s4Img || '';
+                document.getElementById('s5Title').value = data.s5Title || '';
+                document.getElementById('s5Subtitle').value = data.s5Subtitle || '';
+                document.getElementById('s5Desc').value = data.s5Desc || '';
+                document.getElementById('s5Icon').value = data.s5Icon || '';
+                document.getElementById('s5Img').value = data.s5Img || '';
+                document.getElementById('s6Title').value = data.s6Title || '';
+                document.getElementById('s6Subtitle').value = data.s6Subtitle || '';
+                document.getElementById('s6Desc').value = data.s6Desc || '';
+                document.getElementById('s6Icon').value = data.s6Icon || '';
+                document.getElementById('s6Img').value = data.s6Img || '';
+                document.getElementById('p1Title').value = data.p1Title || '';
+                document.getElementById('p1Tag').value = data.p1Tag || '';
+                document.getElementById('p1Role').value = data.p1Role || '';
+                document.getElementById('p1Achieve').value = data.p1Achieve || '';
+                document.getElementById('p1Img').value = data.p1Img || '';
+                document.getElementById('p2Title').value = data.p2Title || '';
+                document.getElementById('p2Tag').value = data.p2Tag || '';
+                document.getElementById('p2Role').value = data.p2Role || '';
+                document.getElementById('p2Achieve').value = data.p2Achieve || '';
+                document.getElementById('p2Img').value = data.p2Img || '';
+                document.getElementById('team1Name').value = data.team1Name || '';
+                document.getElementById('team1Role').value = data.team1Role || '';
+                document.getElementById('team1Link').value = data.team1Link || '';
+                document.getElementById('team2Name').value = data.team2Name || '';
+                document.getElementById('team2Role').value = data.team2Role || '';
+                document.getElementById('team2Link').value = data.team2Link || '';
+                document.getElementById('team3Name').value = data.team3Name || '';
+                document.getElementById('team3Role').value = data.team3Role || '';
+                document.getElementById('team3Link').value = data.team3Link || '';
+                document.getElementById('team4Name').value = data.team4Name || '';
+                document.getElementById('team4Role').value = data.team4Role || '';
+                document.getElementById('team4Link').value = data.team4Link || '';
+                document.getElementById('team5Name').value = data.team5Name || '';
+                document.getElementById('team5Role').value = data.team5Role || '';
+                document.getElementById('team5Link').value = data.team5Link || '';
+
+
+            }
+            statusDiv.innerText = 'اطلاعات بارگذاری شد.';
+            setTimeout(() => statusDiv.innerText = '', 2000);
+        } catch (e) {
+            statusDiv.innerText = 'خطا در بارگذاری.';
+        }
+    }
+
+    window.saveData = async () => {
+        statusDiv.innerText = 'در حال ذخیره...';
+        const data = {
+            
+            heroTitle: document.getElementById('heroTitle').value,
+            heroText: document.getElementById('heroText').value,
+            aboutText: document.getElementById('aboutText').value,
+            s1Title: document.getElementById('s1Title').value,
+            s1Subtitle: document.getElementById('s1Subtitle').value,
+            s1Desc: document.getElementById('s1Desc').value,
+            s1Icon: document.getElementById('s1Icon').value,
+            s1Img: document.getElementById('s1Img').value,
+            s2Title: document.getElementById('s2Title').value,
+            s2Subtitle: document.getElementById('s2Subtitle').value,
+            s2Desc: document.getElementById('s2Desc').value,
+            s2Icon: document.getElementById('s2Icon').value,
+            s2Img: document.getElementById('s2Img').value,
+            s3Title: document.getElementById('s3Title').value,
+            s3Subtitle: document.getElementById('s3Subtitle').value,
+            s3Desc: document.getElementById('s3Desc').value,
+            s3Icon: document.getElementById('s3Icon').value,
+            s3Img: document.getElementById('s3Img').value,
+            s4Title: document.getElementById('s4Title').value,
+            s4Subtitle: document.getElementById('s4Subtitle').value,
+            s4Desc: document.getElementById('s4Desc').value,
+            s4Icon: document.getElementById('s4Icon').value,
+            s4Img: document.getElementById('s4Img').value,
+            s5Title: document.getElementById('s5Title').value,
+            s5Subtitle: document.getElementById('s5Subtitle').value,
+            s5Desc: document.getElementById('s5Desc').value,
+            s5Icon: document.getElementById('s5Icon').value,
+            s5Img: document.getElementById('s5Img').value,
+            s6Title: document.getElementById('s6Title').value,
+            s6Subtitle: document.getElementById('s6Subtitle').value,
+            s6Desc: document.getElementById('s6Desc').value,
+            s6Icon: document.getElementById('s6Icon').value,
+            s6Img: document.getElementById('s6Img').value,
+            p1Title: document.getElementById('p1Title').value,
+            p1Tag: document.getElementById('p1Tag').value,
+            p1Role: document.getElementById('p1Role').value,
+            p1Achieve: document.getElementById('p1Achieve').value,
+            p1Img: document.getElementById('p1Img').value,
+            p2Title: document.getElementById('p2Title').value,
+            p2Tag: document.getElementById('p2Tag').value,
+            p2Role: document.getElementById('p2Role').value,
+            p2Achieve: document.getElementById('p2Achieve').value,
+            p2Img: document.getElementById('p2Img').value,
+            team1Name: document.getElementById('team1Name').value,
+            team1Role: document.getElementById('team1Role').value,
+            team1Link: document.getElementById('team1Link').value,
+            team2Name: document.getElementById('team2Name').value,
+            team2Role: document.getElementById('team2Role').value,
+            team2Link: document.getElementById('team2Link').value,
+            team3Name: document.getElementById('team3Name').value,
+            team3Role: document.getElementById('team3Role').value,
+            team3Link: document.getElementById('team3Link').value,
+            team4Name: document.getElementById('team4Name').value,
+            team4Role: document.getElementById('team4Role').value,
+            team4Link: document.getElementById('team4Link').value,
+            team5Name: document.getElementById('team5Name').value,
+            team5Role: document.getElementById('team5Role').value,
+            team5Link: document.getElementById('team5Link').value
+
+
+        };
+        try {
+            await setDoc(doc(db, "content", "main"), data, { merge: true });
+            statusDiv.innerText = 'تغییرات با موفقیت ذخیره شد!';
+            setTimeout(() => statusDiv.innerText = '', 3000);
+        } catch (e) {
+            statusDiv.innerText = 'خطا در ذخیره.';
+        }
+    };
+</script>
+</body>
+</html>

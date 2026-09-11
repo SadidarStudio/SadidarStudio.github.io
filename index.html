@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
     <style>
         :root {
-            --bg-dark: #011F41;
-            --bg-card: #032b59;
-            --accent-teal: #21B9C6;
-            --accent-gold: #EBA430;
-            --text-white: #FFFFFF;
-            --text-muted: #a0aec0;
-            --transition-speed: 0.6s;
+            --bg-dark: #05080e;
+            --bg-card: #0c1421;
+            --accent-teal: #1bb7b7;
+            --accent-gold: #dfa338;
+            --text-white: #e2e8f0;
+            --text-muted: #8395a7;
+            --transition-speed: 0.8s;
         }
 
         * {
@@ -114,7 +114,7 @@
             display: flex;
             width: 600vw; /* 6 Sections */
             height: 100%;
-            transition: transform var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1);
+            
             will-change: transform;
         }
 
@@ -206,17 +206,28 @@
         }
 
         .card {
-            background: var(--bg-card);
+            background: rgba(12, 20, 33, 0.6);
+            backdrop-filter: blur(10px);
             padding: 25px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s, border-color 0.3s;
+            border-radius: 16px;
+            border: 1px solid rgba(33, 185, 198, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+            opacity: 0; transition: opacity 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-teal);
+            transform: translateY(-10px);
+            border-color: rgba(33, 185, 198, 0.4);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 20px rgba(33,185,198,0.1);
         }
+        .card:hover::before { opacity: 1; }
 
         .card h3 {
             color: var(--text-white);
@@ -382,106 +393,847 @@
                 grid-column: span 1;
             }
         }
-    </style>
+    
+        .hero-bg-glow {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(33, 185, 198, 0.1) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        /* Custom Footer / Timeline */
+        footer {
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            height: 100px;
+            background: transparent;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 50px;
+        }
+        .timeline-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+        }
+        .timeline-line-bg {
+            position: absolute;
+            top: 50%; left: 60px; right: 60px;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .timeline-line-fill {
+            position: absolute;
+            top: 0; right: 0; /* RTL fill from right to left */
+            height: 100%;
+            background: var(--accent-gold);
+            width: 0%;
+            transition: width var(--transition-speed) ease;
+        }
+        .timeline-nodes {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%; left: 60px; right: 60px;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .timeline-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            gap: 15px;
+            color: var(--text-muted);
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .timeline-node::before {
+            content: '';
+            width: 8px; height: 8px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .timeline-node.active {
+            color: var(--accent-gold);
+        }
+        .timeline-node.active::before {
+            background: var(--accent-gold);
+            transform: scale(1.5);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+        .nav-btn-circle {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: white;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 5;
+        }
+        .nav-btn-circle:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: rgba(223, 163, 56, 0.1);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 40px rgba(33, 185, 198, 0.3); }
+            50% { box-shadow: 0 0 60px rgba(33, 185, 198, 0.6); }
+            100% { box-shadow: 0 0 40px rgba(33, 185, 198, 0.3); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        body, a, button, .card, .timeline-node, .nav-link, .nav-btn-circle {
+            cursor: none !important;
+        }
+        #custom-cursor-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 6px; height: 6px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            margin-top: -3px;
+            margin-left: -3px;
+            transition: opacity 0.3s;
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+        #custom-cursor-glow {
+            position: fixed;
+            top: 0; left: 0;
+            width: 40px; height: 40px;
+            border: 1px solid rgba(33, 185, 198, 0.5);
+            background-color: rgba(33, 185, 198, 0.05);
+            box-shadow: 0 0 15px rgba(33, 185, 198, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            margin-top: -20px;
+            margin-left: -20px;
+            transition: opacity 0.3s, background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .cursor-hovering {
+            background-color: rgba(223, 163, 56, 0.1) !important;
+            border-color: rgba(223, 163, 56, 0.5) !important;
+            box-shadow: 0 0 20px rgba(223, 163, 56, 0.4) !important;
+        }
+
+        footer {
+            background: rgba(12, 20, 33, 0.4) !important;
+            backdrop-filter: blur(12px);
+            animation: footerBreath 4s ease-in-out infinite;
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        footer::before {
+            content: ''; position: absolute; top: -1px; left: -50%; width: 40%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-teal), #fff, var(--accent-teal), transparent);
+            animation: scanline 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            filter: drop-shadow(0 0 10px var(--accent-teal));
+        }
+        footer::after {
+            content: ''; position: absolute; bottom: 0; right: -50%; width: 40%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), #fff, var(--accent-gold), transparent);
+            animation: scanline-reverse 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            filter: drop-shadow(0 0 10px var(--accent-gold));
+        }
+        @keyframes scanline { 0% { left: -50%; } 100% { left: 150%; } }
+        @keyframes scanline-reverse { 0% { right: -50%; } 100% { right: 150%; } }
+        @keyframes footerBreath {
+            0%, 100% { box-shadow: inset 0 20px 40px -20px rgba(33, 185, 198, 0.05); }
+            50% { box-shadow: inset 0 20px 40px -20px rgba(33, 185, 198, 0.4); }
+        }
+        
+        .interactive-text { 
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            display: inline-block; 
+            cursor: none !important; 
+            position: relative;
+        }
+        .interactive-text::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+        
+        .interactive-text:hover::after {
+            width: 100%;
+        }
+
+        /* --- Holographic Team Grid --- */
+        .team-holo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 60px;
+            align-items: center;
+            perspective: 1000px;
+        }
+
+        .team-holo-card {
+            position: relative;
+            width: 220px;
+            height: 350px;
+            background: rgba(1, 31, 65, 0.6);
+            border: 1px solid rgba(33, 185, 198, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease, border-color 0.3s ease;
+            transform: translateY(var(--offset-y, 0px)) rotateX(5deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            cursor: none !important;
+        }
+
+        .team-holo-card:nth-child(1) { --offset-y: -40px; }
+        .team-holo-card:nth-child(2) { --offset-y: 20px; }
+        .team-holo-card:nth-child(3) { --offset-y: -60px; }
+        .team-holo-card:nth-child(4) { --offset-y: 20px; }
+        .team-holo-card:nth-child(5) { --offset-y: -40px; }
+
+        .team-holo-card:hover {
+            transform: translateY(calc(var(--offset-y) - 20px)) rotateX(0deg) scale(1.05);
+            box-shadow: 0 20px 40px rgba(33, 185, 198, 0.4), 0 0 20px rgba(223, 163, 56, 0.2);
+            border-color: var(--accent-gold);
+            z-index: 10;
+        }
+
+        .team-holo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(80%) contrast(1.2) brightness(0.6) sepia(20%) hue-rotate(180deg);
+            transition: filter 0.6s ease, transform 0.6s ease;
+            transform: scale(1.02);
+        }
+
+        .team-holo-card:hover .team-holo-image {
+            filter: grayscale(0%) contrast(1) brightness(1) sepia(0%);
+            transform: scale(1.1);
+        }
+
+        .team-holo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 20px 20px 20px;
+            background: linear-gradient(to top, rgba(1,31,65,1) 0%, rgba(1,31,65,0.8) 60%, transparent 100%);
+            backdrop-filter: blur(3px);
+            border-top: 1px solid rgba(33,185,198,0.1);
+            transform: translateY(0);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
+        }
+
+        .team-holo-card:hover .team-holo-overlay {
+            border-top: 1px solid var(--accent-gold);
+        }
+
+        .team-holo-name {
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+            color: #fff;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .team-holo-role {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--accent-teal);
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .holo-scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(33, 185, 198, 0.8);
+            box-shadow: 0 0 15px rgba(33,185,198,1);
+            opacity: 0;
+            transition: opacity 0.3s;
+            animation: holoScan 2.5s infinite linear;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .team-holo-card:hover .holo-scanline {
+            opacity: 1;
+        }
+
+        @keyframes holoScan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* --- Creative Projects Layout --- */
+        .projects-creative-wrapper {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            width: 100%;
+        }
+        .project-creative-card, .services-menu-item {
+            position: relative;
+            width: 420px;
+            height: auto;
+            min-height: 480px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(12, 20, 33, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            cursor: none !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+        .project-creative-card, .services-menu-item.offset-up {
+            transform: translateY(-30px);
+        }
+        .project-creative-card, .services-menu-item.offset-down {
+            transform: translateY(30px);
+        }
+        .project-creative-card, .services-menu-item:hover {
+            transform: translateY(0) scale(1.02);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px rgba(33, 185, 198, 0.1);
+            z-index: 10;
+        }
+        .project-img-wrapper {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            filter: grayscale(30%) contrast(1.1);
+        }
+        .project-creative-card, .services-menu-item:hover .project-img-wrapper img {
+            transform: scale(1.08);
+            filter: grayscale(0%) contrast(1.1);
+        }
+        .project-img-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 70%;
+            background: linear-gradient(to top, rgba(12, 20, 33, 0.9), transparent);
+        }
+        .project-info-box {
+            padding: 30px;
+            text-align: right;
+            position: relative;
+            margin-top: -30px;
+            z-index: 2;
+        }
+        .project-badge-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background: rgba(33, 185, 198, 0.05);
+        }
+        .project-badge-tag.gold {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: rgba(223, 163, 56, 0.05);
+        }
+        .project-info-box h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0 0 25px 0;
+            font-weight: 800;
+        }
+        .project-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .project-info-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .project-info-row strong {
+            color: #eee;
+            font-weight: 600;
+        }
+        .project-info-row span {
+            color: var(--text-muted);
+        }
+
+        /* --- Clean Services Layout with Modal --- */
+        .services-clean-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+        }
+        .services-menu-item {
+            background: rgba(12, 20, 33, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: right;
+            cursor: none !important;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+        }
+        .services-menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; width: 4px; height: 100%;
+            background: var(--accent-teal);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .services-menu-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(33, 185, 198, 0.3);
+            background: rgba(12, 20, 33, 0.9);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .services-menu-item:hover::before {
+            opacity: 1;
+        }
+        .service-clean-icon {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            display: inline-block;
+        }
+        .services-menu-item h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .services-menu-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+        .service-click-hint {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            transform: translateX(-5px);
+        }
+        .services-menu-item:hover .service-click-hint {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* --- Service Modal --- */
+        .service-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .service-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .service-modal-content {
+            background: var(--bg-dark);
+            border: 1px solid rgba(33, 185, 198, 0.3);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(30px) scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+        .service-modal.active .service-modal-content {
+            transform: translateY(0) scale(1);
+        }
+        .service-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: none !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+        .service-modal-close:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+        .service-modal-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--accent-teal);
+        }
+        .service-modal-body {
+            padding: 40px;
+            text-align: right;
+        }
+        .service-modal-body h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .service-modal-body p {
+            font-size: 1.1rem;
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+</style>
 </head>
 <body>
 
-    <header>
+    <!-- Custom Cursor -->
+    <div id="custom-cursor-glow"></div>
+    <div id="custom-cursor-dot"></div>
+
+
+    <!-- Tech Background & Ambient Fog -->
+    <canvas id="tech-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: 0.6;"></canvas>
+    <div id="smoke-layer-1" style="position: fixed; bottom: -15vh; left: -10vw; width: 120vw; height: 70vh; z-index: -2; pointer-events: none; opacity: 0.7; filter: blur(70px); background: radial-gradient(ellipse at 50% 100%, rgba(33, 185, 198, 0.4) 0%, transparent 70%); mix-blend-mode: screen; transition: transform 0.2s ease-out;"></div>
+    <div id="smoke-layer-2" style="position: fixed; bottom: -10vh; left: -10vw; width: 120vw; height: 80vh; z-index: -2; pointer-events: none; opacity: 0.5; filter: blur(90px); background: radial-gradient(ellipse at 70% 100%, rgba(223, 163, 56, 0.2) 0%, transparent 60%); mix-blend-mode: screen; transition: transform 0.3s ease-out;"></div>
+    <div style="position: fixed; bottom: 0; left: 0; width: 100vw; height: 35vh; z-index: -1; pointer-events: none; background: linear-gradient(to top, var(--bg-dark) 0%, transparent 100%);"></div>
+
+
+            <header style="background: transparent; padding: 20px 50px;">
         <div class="logo-container">
-            <div class="logo-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#21B9C6" stroke-width="2">
-                    <path d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                </svg>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="image.png" alt="Sadidar Logo" style="height: 40px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(33,185,198,0.5));">
+                <div style="display: flex; flex-direction: column; align-items: flex-start; text-align: right;">
+                    <span style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px; color: white;">سدیدار</span>
+                    <span style="font-size: 0.6rem; letter-spacing: 4px; color: var(--text-muted); text-transform: uppercase;">S A D I D A R</span>
+                </div>
             </div>
-            <span class="logo-text">سدیدار</span>
         </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a class="nav-link active" onclick="goToSlide(0)">خانه</a></li>
-                <li><a class="nav-link" onclick="goToSlide(1)">درباره ما</a></li>
-                <li><a class="nav-link" onclick="goToSlide(2)">فعالیت‌ها</a></li>
-                <li><a class="nav-link" onclick="goToSlide(3)">خدمات</a></li>
-                <li><a class="nav-link" onclick="goToSlide(4)">پروژه‌ها</a></li>
-                <li><a class="nav-link" onclick="goToSlide(5)">تماس</a></li>
+        
+        <nav style="flex: 1; display: flex; justify-content: center;">
+            <ul class="nav-menu" style="gap: 40px; display: flex; list-style: none;">
+                <li><a class="nav-link active" onclick="goToSlide(0)" id="nav-0">خانه</a></li>
+                <li><a class="nav-link" onclick="goToSlide(1)" id="nav-1">درباره ما</a></li>
+                <li><a class="nav-link" onclick="goToSlide(2)" id="nav-2">خدمات</a></li>
+                <li><a class="nav-link" onclick="goToSlide(3)" id="nav-3">پروژه‌ها</a></li>
+                <li><a class="nav-link" onclick="goToSlide(4)" id="nav-4">تیم ما</a></li>
+                <li><a class="nav-link" onclick="goToSlide(5)" id="nav-5">تماس</a></li>
             </ul>
         </nav>
+
+        <div class="header-left" style="display: flex; align-items: center; gap: 20px; color: var(--text-muted); cursor: pointer;">
+            <span style="font-size: 0.9rem;">FA ˅</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </div>
     </header>
 
     <div class="viewport-wrapper">
         <div class="horizontal-slider" id="slider">
             
             <!-- Section 1: Hero -->
-            <section id="sec-0">
-                <div class="section-content">
-                    <div class="hero-grid">
-                        <div class="hero-text">
-                            <span style="color: var(--accent-teal); font-weight: bold;">S A D I D A R</span>
-                            <h1>فراتر از دیدن،<br>نزدیک‌تر به معنا</h1>
-                            <p>سدیدار تجربه‌هایی می‌سازد که از تماشا فراتر می‌روند؛ تجربه‌هایی درست، معنادار و اثرگذار برای فرهنگ، آموزش و سرگرمی تعاملی.</p>
-                        </div>
-                        <div class="hero-visual">
-                            <div class="vr-badge">محیط واقعیت مجازی و تعاملی</div>
+            <section id="sec-0" style="display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
+                <div class="hero-bg-glow"></div>
+                
+                <div style="display: flex; width: 100%; max-width: 1600px; padding: 0 50px; align-items: center; justify-content: space-between;">
+                    
+                    <!-- Text Area (Right side visually, RTL flow) -->
+                    <div style="flex: 1; padding-left: 50px; z-index: 10; text-align: right;">
+                        <h4 style="color: var(--accent-teal); letter-spacing: 12px; font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; font-family: sans-serif;" id="hero-subtitle">S A D I D A R</h4>
+                        <h1 id="hero-title" class="interactive-text" style="font-size: 4.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 30px; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">فراتر از دیدن،<br>نزدیک‌تر به معنا</h1>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 15px; width: 400px; margin-right: 0; margin-left: auto;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="height: 4px; width: 60px; background: var(--accent-teal);"></div>
+                                <div style="height: 4px; width: 10px; background: var(--accent-teal); opacity: 0.5;"></div>
+                            </div>
+                            <div style="height: 4px; width: 100%; background: rgba(255,255,255,0.1);"></div>
+                            <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+                                <div style="height: 4px; width: 250px; background: rgba(255,255,255,0.1);"></div>
+                                <div style="height: 4px; width: 40px; background: var(--accent-gold);"></div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- 3D Gallery Area (Left side) -->
+                    <div style="flex: 1.2; position: relative; height: 500px; display: flex; align-items: center; justify-content: center; perspective: 1000px;">
+                        <!-- Left card -->
+                        <div class="animate-float" style="position: absolute; left: -10%; animation-delay: -2s; z-index: 1;">
+                            <div style="width: 280px; height: 350px; background: url('https://images.unsplash.com/photo-1616499370260-485b3e5ed653?auto=format&fit=crop&w=400&q=80') center/cover; transform: rotateY(25deg) scale(0.85); border-radius: 10px; opacity: 0.6; box-shadow: 0 20px 40px rgba(0,0,0,0.8); filter: grayscale(50%) sepia(30%) hue-rotate(180deg);"></div>
+                        </div>
+                        
+                        <!-- Right card -->
+                        <div class="animate-float" style="position: absolute; right: -5%; z-index: 1;">
+                            <div style="width: 280px; height: 350px; background: url('https://images.unsplash.com/photo-1633511198642-7c385c94fb11?auto=format&fit=crop&w=400&q=80') center/cover; transform: rotateY(-25deg) scale(0.85); border-radius: 10px; opacity: 0.6; box-shadow: 0 20px 40px rgba(0,0,0,0.8); filter: grayscale(50%) sepia(30%) hue-rotate(180deg);"></div>
+                        </div>
+                        
+                        <!-- Center card -->
+                        <div class="animate-float" style="position: absolute; z-index: 5; animation-delay: -1s;">
+                            <div style="animation: pulseGlow 4s ease-in-out infinite; width: 380px; height: 480px; background: url('/src/assets/images/minimal_vr_headset_1789142033394.jpg') center/cover; transform: translateZ(50px); border-radius: 12px; box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(33, 185, 198, 0.4); border: 1px solid rgba(33, 185, 198, 0.3); filter: contrast(1.1) brightness(1.1);"></div>
+                        </div>
+</div>
                 </div>
             </section>
 
             <!-- Section 2: About -->
             <section id="sec-1">
                 <div class="section-content">
-                    <h2 class="section-title">درباره ما</h2>
-                    <p style="font-size: 1.3rem; line-height: 2; color: var(--text-muted); max-width: 800px;">
-                        ما تازه شروع نکرده‌ایم، ما تجربه‌هایمان را در قالب یک مجموعه تازه کنار هم آورده‌ایم تا بستری نو برای خلق روایت‌های دیجیتال و تعاملی فراهم سازیم.
+                    <h2 class="section-title interactive-text" id="title-about">درباره ما</h2>
+                    <p style="font-size: 1.3rem; line-height: 2; color: var(--text-muted); max-width: 800px;" id="text-about">
+                        ما در سدیدار بر این باوریم که رسانه‌های تعاملی، قدرتمندترین ابزار برای انتقال مفاهیم در دنیای امروز هستند. تیم ما متشکل از متخصصان خلاق در حوزه‌های هنر، طراحی و برنامه‌نویسی است که با هدف ارتقای سطح کیفی محصولات فرهنگی و آموزشی گرد هم آمده‌اند. از طراحی محیط‌های غوطه‌ورکننده تا توسعه بازی‌های جدی، هر پروژه برای ما فرصتی است تا مرزهای خلاقیت را جابجا کنیم و اثری ماندگار خلق نماییم.
                     </p>
                 </div>
             </section>
 
-            <!-- Section 3: Activity Areas -->
+            <!-- Section 3: Services & Activities -->
             <section id="sec-2">
                 <div class="section-content">
-                    <h2 class="section-title">حوزه‌های فعالیت</h2>
-                    <div class="cards-grid">
-                        <div class="card"><h3>واقعیت مجازی (VR)</h3><p>طراحی محیط‌های غوطه‌ورکننده</p></div>
-                        <div class="card"><h3>واقعیت افزوده (AR)</h3><p>ترکیب محتوای دیجیتال با دنیای واقعی</p></div>
-                        <div class="card"><h3>بازی‌های ویدیویی و جدی</h3><p>توسعه بازی‌های آموزشی و سرگرمی</p></div>
-                        <div class="card"><h3>شبیه‌سازی تاریخی</h3><p>بازسازی مکان‌ها و روایت‌های کهن</p></div>
-                        <div class="card"><h3>محتوای هوش مصنوعی</h3><p>تولید ویدیوها و روایت‌های هوشمند</p></div>
-                        <div class="card"><h3>تجربه‌های موزه و نمایشگاه</h3><p>دیجیتال‌سازی فضاهای فرهنگی</p></div>
-                    </div>
-                </div>
-            </section>
+                    <h2 class="section-title interactive-text" id="title-services">خدمات</h2>
+                    
+                    <div class="services-menu-layout">
+                        <!-- Right List (Menu) -->
+                        <div class="services-menu-list" id="servicesMenuList">
+                            
+                            <div class="services-menu-item active" id="s1-card"
+                                 data-title="واقعیت مجازی (VR)" 
+                                 data-desc="در سدیدار، ما محیط‌های واقعیت مجازی کاملاً سه‌بعدی و غوطه‌ورکننده طراحی می‌کنیم. از شبیه‌سازهای آموزشی دقیق گرفته تا تجربه‌های تعاملی و داستان‌گویی دیجیتال، ما دنیایی خلق می‌کنیم که کاربران در آن احساس حضور فیزیکی داشته باشند. استفاده از جدیدترین هدست‌ها و تکنیک‌های رندرینگ پیشرفته تضمین می‌کند که هر پروژه از بالاترین کیفیت بصری برخوردار باشد."
+                                 data-img="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1000&q=80">
+                                <span class="menu-item-icon" id="s1-icon">🥽</span>
+                                <span class="menu-item-title" id="s1-title">واقعیت مجازی (VR)</span>
+                                <span id="s1-subtitle" style="display:none;">طراحی محیط‌های غوطه‌ورکننده و تعاملی</span>
+                            </div>
 
-            <!-- Section 4: Services -->
-            <section id="sec-3">
-                <div class="section-content">
-                    <h2 class="section-title">خدمات قابل ارائه</h2>
-                    <div class="cards-grid">
-                        <div class="card"><h3>طراحی VR & AR</h3><p>توسعه کامل برنامه‌ها و تجربه‌ها</p></div>
-                        <div class="card"><h3>ساخت پروتوتایپ</h3><p>نمونه‌سازی سریع ایده‌های تعاملی</p></div>
-                        <div class="card"><h3>تولید بازی دیجیتال</h3><p>از ایده تا پیاده‌سازی فنی</p></div>
-                        <div class="card"><h3>مشاوره فناوری</h3><p>اجرای پروژه‌های تعاملی سازمان‌ها</p></div>
+                            <div class="services-menu-item" id="s2-card"
+                                 data-title="واقعیت افزوده (AR)"
+                                 data-desc="خدمات واقعیت افزوده ما، محتوای دیجیتال (مدل‌های سه‌بعدی، ویدیوها و اطلاعات) را با محیط واقعی ترکیب می‌کند. ما اپلیکیشن‌هایی توسعه می‌دهیم که از طریق موبایل یا عینک‌های هوشمند، لایه‌ای از اطلاعات ارزشمند و سرگرم‌کننده را به دنیای پیرامون کاربر اضافه می‌کنند. این فناوری برای بازاریابی، آموزش و معرفی محصولات بسیار ایده‌آل است."
+                                 data-img="https://images.unsplash.com/photo-1617802690992-15d93263d3a9?auto=format&fit=crop&w=1000&q=80">
+                                <span class="menu-item-icon" id="s2-icon">📱</span>
+                                <span class="menu-item-title" id="s2-title">واقعیت افزوده (AR)</span>
+                                <span id="s2-subtitle" style="display:none;">ترکیب محتوای دیجیتال با دنیای واقعی</span>
+                            </div>
+
+                            <div class="services-menu-item" id="s3-card"
+                                 data-title="بازی‌های ویدیویی و جدی"
+                                 data-desc="تیم ما در ساخت بازی‌های ویدیویی، تمرکز ویژه‌ای بر بازی‌های جدی (Serious Games) دارد. این بازی‌ها علاوه بر جنبه سرگرمی، برای آموزش مهارت‌های خاص، درمان، و شبیه‌سازی شرایط بحرانی طراحی می‌شوند. ما صفر تا صد گیم‌پلی، داستان، و مکانیک‌ها را بهینه‌سازی می‌کنیم."
+                                 data-img="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1000&q=80">
+                                <span class="menu-item-icon" id="s3-icon">🎮</span>
+                                <span class="menu-item-title" id="s3-title">بازی‌های ویدیویی</span>
+                                <span id="s3-subtitle" style="display:none;">توسعه بازی‌های آموزشی و سرگرمی</span>
+                            </div>
+
+                            <div class="services-menu-item" id="s4-card"
+                                 data-title="طراحی VR & AR"
+                                 data-desc="طراحی تجربه کاربری (UX) و رابط کاربری (UI) برای محیط‌های سه‌بعدی و واقعیت ترکیبی، نیازمند دانش تخصصی است. ما با رعایت اصول ارگونومی، فضایی طراحی می‌کنیم که در آن کاربر بدون احساس خستگی یا سرگیجه، بتواند با منوها و اشیای سه‌بعدی تعامل داشته باشد."
+                                 data-img="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1000&q=80">
+                                <span class="menu-item-icon" id="s4-icon">📐</span>
+                                <span class="menu-item-title" id="s4-title">طراحی VR & AR</span>
+                                <span id="s4-subtitle" style="display:none;">توسعه کامل تجربه‌های سه‌بعدی</span>
+                            </div>
+
+                            <div class="services-menu-item" id="s5-card"
+                                 data-title="ساخت پروتوتایپ"
+                                 data-desc="آیا ایده‌ای دارید اما از امکان‌سنجی فنی آن مطمئن نیستید؟ خدمات ساخت پروتوتایپ ما به شما کمک می‌کند تا ایده خود را در سریع‌ترین زمان ممکن و با کمترین هزینه به یک نسخه اولیه قابل بازی یا قابل تست تبدیل کنید. این مرحله برای جذب سرمایه و اعتبارسنجی ایده حیاتی است."
+                                 data-img="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80">
+                                <span class="menu-item-icon" id="s5-icon">⚙️</span>
+                                <span class="menu-item-title" id="s5-title">ساخت پروتوتایپ</span>
+                                <span id="s5-subtitle" style="display:none;">نمونه‌سازی سریع ایده‌های تعاملی</span>
+                            </div>
+
+                            <div class="services-menu-item" id="s6-card"
+                                 data-title="تولید بازی دیجیتال"
+                                 data-desc="از مرحله پیش‌تولید (نوشتن کانسپت و استوری‌بورد) تا تولید (مدل‌سازی، برنامه‌نویسی و انیمیشن) و انتشار نهایی، تیم سدیدار در کنار شماست. ما با استفاده از موتورهای بازی‌سازی قدرتمند مانند Unity و Unreal Engine محصولی استاندار و باکیفیت را تحویل می‌دهیم."
+                                 data-img="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80">
+                                <span class="menu-item-icon" id="s6-icon">🚀</span>
+                                <span class="menu-item-title" id="s6-title">تولید بازی دیجیتال</span>
+                                <span id="s6-subtitle" style="display:none;">از ایده تا پیاده‌سازی فنی</span>
+                            </div>
+                        </div>
+
+                        <!-- Left Display (Content) -->
+                        <div class="services-menu-display">
+                            <div class="display-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1000&q=80" alt="" id="smImg">
+                            </div>
+                            <div class="display-content fade-in-content" id="smContentBlock">
+                                <div class="display-header">
+                                    <span id="smIcon">🥽</span>
+                                    <h3 id="smTitle">واقعیت مجازی (VR)</h3>
+                                </div>
+                                <h4 id="smSubtitle">طراحی محیط‌های غوطه‌ورکننده و تعاملی</h4>
+                                <p id="smDesc">در سدیدار، ما محیط‌های واقعیت مجازی کاملاً سه‌بعدی و غوطه‌ورکننده طراحی می‌کنیم. از شبیه‌سازهای آموزشی دقیق گرفته تا تجربه‌های تعاملی و داستان‌گویی دیجیتال، ما دنیایی خلق می‌کنیم که کاربران در آن احساس حضور فیزیکی داشته باشند. استفاده از جدیدترین هدست‌ها و تکنیک‌های رندرینگ پیشرفته تضمین می‌کند که هر پروژه از بالاترین کیفیت بصری برخوردار باشد.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section 5: Projects -->
+            <section id="sec-3">
+                <div class="section-content">
+                    <h2 class="section-title interactive-text" id="title-projects">تجربه‌های منتخب</h2>
+                    <div class="projects-creative-wrapper" id="grid-projects">
+                        
+                        <div class="project-creative-card offset-up">
+                            <div class="project-img-wrapper">
+                                <img id="p1-img" src="https://images.unsplash.com/photo-1617802690992-15d93263d3a9?auto=format&fit=crop&w=500&q=80" alt="Historical Simulation" />
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-badge-tag" id="p1-tag">VR / تاریخی</div>
+                                <h3 id="p1-title">شبیه‌سازی تاریخی</h3>
+                                <div class="project-info-row">
+                                    <strong>نقش تیم:</strong>
+                                    <span id="p1-role">طراحی و توسعه کامل</span>
+                                </div>
+                                <div class="project-info-row">
+                                    <strong>دستاورد:</strong>
+                                    <span id="p1-achieve">کسب جایزه بهترین تجربه VR</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-creative-card offset-down">
+                            <div class="project-img-wrapper">
+                                <img id="p2-img" src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=500&q=80" alt="Educational Game" />
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-badge-tag gold" id="p2-tag">آموزشی</div>
+                                <h3 id="p2-title">بازی جدی فرهنگی</h3>
+                                <div class="project-info-row">
+                                    <strong>نقش تیم:</strong>
+                                    <span id="p2-role">تولید محتوا و گیم‌دیزاین</span>
+                                </div>
+                                <div class="project-info-row">
+                                    <strong>دستاورد:</strong>
+                                    <span id="p2-achieve">استفاده در ۱۰ مرکز آموزشی</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Team -->
             <section id="sec-4">
                 <div class="section-content">
-                    <h2 class="section-title">تجربه‌های منتخب</h2>
-                    <div class="cards-grid">
-                        <div class="card">
-                            <span style="color: var(--accent-gold); font-size: 0.8rem;">VR / تاریخی</span>
-                            <h3>شبیه‌سازی تاریخی</h3>
-                            <p><strong>نقش تیم:</strong> طراحی و توسعه کامل</p>
-                            <p><strong>دستاورد:</strong> کسب جایزه بهترین تجربه VR</p>
-                        </div>
-                        <div class="card">
-                            <span style="color: var(--accent-gold); font-size: 0.8rem;">آموزشی</span>
-                            <h3>بازی جدی فرهنگی</h3>
-                            <p><strong>نقش تیم:</strong> تولید محتوا و گیم‌دیزاین</p>
-                            <p><strong>دستاورد:</strong> استفاده در ۱۰ مرکز آموزشی</p>
-                        </div>
+                    <h2 class="section-title interactive-text" id="title-team">تیم ما</h2>
+                    <div class="team-holo-grid" id="grid-team">
+                        <!-- Member 1 -->
+                        <a href="#" id="t1-link" target="_blank" class="team-holo-card">
+                            <div class="holo-scanline"></div>
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <div class="team-holo-overlay">
+                                <h3 id="t1-name" class="team-holo-name interactive-text">سیده مریم طباطبایی</h3>
+                                <p id="t1-role" class="team-holo-role">مدیر و توسعه دهنده</p>
+                            </div>
+                        </a>
+                        <!-- Member 2 -->
+                        <a href="#" id="t2-link" target="_blank" class="team-holo-card">
+                            <div class="holo-scanline"></div>
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <div class="team-holo-overlay">
+                                <h3 id="t2-name" class="team-holo-name interactive-text">کریم منصوری</h3>
+                                <p id="t2-role" class="team-holo-role">کارگردان</p>
+                            </div>
+                        </a>
+                        <!-- Member 3 -->
+                        <a href="#" id="t3-link" target="_blank" class="team-holo-card">
+                            <div class="holo-scanline"></div>
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <div class="team-holo-overlay">
+                                <h3 id="t3-name" class="team-holo-name interactive-text">ریحانه مختاری</h3>
+                                <p id="t3-role" class="team-holo-role">کارشناس فضای مجازی</p>
+                            </div>
+                        </a>
+                        <!-- Member 4 -->
+                        <a href="#" id="t4-link" target="_blank" class="team-holo-card">
+                            <div class="holo-scanline"></div>
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <div class="team-holo-overlay">
+                                <h3 id="t4-name" class="team-holo-name interactive-text">علیرضا روحیان</h3>
+                                <p id="t4-role" class="team-holo-role">طراح سه بعدی</p>
+                            </div>
+                        </a>
+                        <!-- Member 5 -->
+                        <a href="#" id="t5-link" target="_blank" class="team-holo-card">
+                            <div class="holo-scanline"></div>
+                            <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <div class="team-holo-overlay">
+                                <h3 id="t5-name" class="team-holo-name interactive-text">سید محمد فخری</h3>
+                                <p id="t5-role" class="team-holo-role">سرپرست تحقیق و توسعه</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -489,7 +1241,7 @@
             <!-- Section 6: Contact -->
             <section id="sec-5">
                 <div class="section-content">
-                    <h2 class="section-title">تماس با ما</h2>
+                    <h2 class="section-title interactive-text" id="title-contact">تماس با ما</h2>
                     <form class="contact-form" onsubmit="event.preventDefault();">
                         <div class="form-group"><input type="text" placeholder="نام و نام خانوادگی"></div>
                         <div class="form-group"><input type="email" placeholder="ایمیل یا شماره تماس"></div>
@@ -502,20 +1254,24 @@
         </div>
     </div>
 
-    <footer>
-        <div class="controls">
-            <button class="btn-nav" onclick="prevSlide()">&#8594;</button>
-            <button class="btn-nav" onclick="nextSlide()">&#8592;</button>
-        </div>
+        <footer>
+        <div class="timeline-wrapper">
+            <button class="nav-btn-circle" onclick="nextSlide()" title="Next">&#8594;</button>
+            
+            <div class="timeline-line-bg">
+                <div class="timeline-line-fill" id="progress-fill"></div>
+            </div>
+            
+            <div class="timeline-nodes">
+                <div class="timeline-node active" onclick="goToSlide(0)"><span>01</span></div>
+                <div class="timeline-node" onclick="goToSlide(1)"><span>02</span></div>
+                <div class="timeline-node" onclick="goToSlide(2)"><span>03</span></div>
+                <div class="timeline-node" onclick="goToSlide(3)"><span>04</span></div>
+                <div class="timeline-node" onclick="goToSlide(4)"><span>05</span></div>
+                <div class="timeline-node" onclick="goToSlide(5)"><span>06</span></div>
+            </div>
 
-        <div class="timeline">
-            <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress"></div></div>
-            <span class="timeline-step active" onclick="goToSlide(0)">01</span>
-            <span class="timeline-step" onclick="goToSlide(1)">02</span>
-            <span class="timeline-step" onclick="goToSlide(2)">03</span>
-            <span class="timeline-step" onclick="goToSlide(3)">04</span>
-            <span class="timeline-step" onclick="goToSlide(4)">05</span>
-            <span class="timeline-step" onclick="goToSlide(5)">06</span>
+            <button class="nav-btn-circle" onclick="prevSlide()" title="Prev">&#8592;</button>
         </div>
     </footer>
 
@@ -523,29 +1279,51 @@
         let currentSlide = 0;
         const totalSlides = 6;
         const slider = document.getElementById('slider');
-        const progress = document.getElementById('progress');
+        
         const navLinks = document.querySelectorAll('.nav-link');
-        const timelineSteps = document.querySelectorAll('.timeline-step');
+        
         let isAnimating = false;
 
-        function updateUI() {
-            // در حالت RTL، جابه‌جایی به سمت راست مثبت است
+        // --- Smooth Inertia Scroll Logic ---
+        let currentTranslateX = 0;
+        let targetTranslateX = 0;
+        
+        function smoothScrollLoop() {
             if (window.innerWidth > 1024) {
-                slider.style.transform = `translateX(${currentSlide * 100}vw)`;
+                targetTranslateX = currentSlide * 100;
+                // Lerp formula: current = current + (target - current) * ease
+                currentTranslateX += (targetTranslateX - currentTranslateX) * 0.06;
+                slider.style.transform = `translateX(${currentTranslateX}vw)`;
             } else {
                 slider.style.transform = 'none';
+                currentTranslateX = 0;
+                targetTranslateX = 0;
+            }
+            requestAnimationFrame(smoothScrollLoop);
+        }
+        smoothScrollLoop(); // Start the loop
+
+        function updateUI() {
+            // آپدیت پروگرس‌بار و تایم‌لاین
+            const fill = document.getElementById('progress-fill');
+            if (fill) {
+                const percentage = (currentSlide / (totalSlides - 1)) * 100;
+                fill.style.width = `${percentage}%`;
             }
 
-            // آپدیت پروگرس‌بار
-            const percentage = ((currentSlide + 1) / totalSlides) * 100;
-            progress.style.width = `${percentage}%`;
-
-            // آپدیت لینک‌ها
-            navLinks.forEach((link, idx) => {
-                link.classList.toggle('active', idx === currentSlide);
+            // آپدیت لینک‌ها (چون ترتیب لینک‌های هدر برعکس شده)
+            navLinks.forEach(link => {
+                const targetId = link.getAttribute('id');
+                if (targetId === `nav-${currentSlide}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
             });
-            timelineSteps.forEach((step, idx) => {
-                step.classList.toggle('active', idx === currentSlide);
+
+            const timelineNodes = document.querySelectorAll('.timeline-node');
+            timelineNodes.forEach((node, idx) => {
+                node.classList.toggle('active', idx <= currentSlide);
             });
         }
 
@@ -574,12 +1352,12 @@
         window.addEventListener('wheel', (e) => {
             if (window.innerWidth <= 1024 || isAnimating) return;
 
-            if (e.deltaY > 0) {
+            if (e.deltaY > 0) { // Scroll down -> move forward (next page)
                 if (currentSlide < totalSlides - 1) {
                     currentSlide++;
                     lockAnimation();
                 }
-            } else if (e.deltaY < 0) {
+            } else if (e.deltaY < 0) { // Scroll up -> move backward (prev page)
                 if (currentSlide > 0) {
                     currentSlide--;
                     lockAnimation();
@@ -590,7 +1368,7 @@
         function lockAnimation() {
             isAnimating = true;
             updateUI();
-            setTimeout(() => { isAnimating = false; }, 600);
+            setTimeout(() => { isAnimating = false; }, 500);
         }
 
         // کلیدهای کیبورد
@@ -600,7 +1378,427 @@
             if (e.key === 'ArrowRight') prevSlide();
         });
 
-        window.addEventListener('resize', updateUI);
-    </script>
-</body>
+        
+            // --- Tech Particle Background ---
+        const canvas = document.getElementById('tech-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+        let particles = [];
+        let mouseX = -1000;
+        let mouseY = -1000;
+        
+        
+        const NUM_PARTICLES = 160;
+        class Particle {
+            constructor(index) {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.baseVx = (Math.random() - 0.5) * 0.4;
+                this.baseVy = (Math.random() - 0.5) * 0.4;
+                this.vx = this.baseVx;
+                this.vy = this.baseVy;
+                this.size = Math.random() * 1.5 + 0.8;
+
+                // Virtual Islamic Architecture Geometry (Rub el Hizb 8-pointed star & Dome Arch)
+                let angle = (index / NUM_PARTICLES) * Math.PI * 2;
+                let radiusBase = Math.min(width, height) * 0.38;
+                
+                let cos1 = Math.abs(Math.cos(angle));
+                let sin1 = Math.abs(Math.sin(angle));
+                let cos2 = Math.abs(Math.cos(angle - Math.PI/4));
+                let sin2 = Math.abs(Math.sin(angle - Math.PI/4));
+                
+                let r1 = 1 / Math.max(cos1, sin1);
+                let r2 = 1 / Math.max(cos2, sin2);
+                let r = radiusBase * 0.8 * Math.max(r1, r2); // The 8-pointed star equation
+                
+                if (index % 5 === 0) r = radiusBase * 1.1; // Outer bounding cosmic circle
+                else if (index % 5 === 1) r = radiusBase * 0.3; // Inner core circle
+                else if (index % 5 === 2) {
+                    // Dome / Arch parametric shape
+                    let t = (index / NUM_PARTICLES) * Math.PI;
+                    this.txBase = width/2 + Math.cos(t) * radiusBase * 1.8;
+                    this.tyBase = height/2 - Math.abs(Math.sin(t)) * radiusBase * 1.5 + radiusBase * 0.8;
+                    this.isDome = true;
+                }
+
+                if(!this.isDome) {
+                    this.txBase = width/2 + r * Math.cos(angle);
+                    this.tyBase = height/2 + r * Math.sin(angle);
+                }
+                
+                this.angleOffset = angle;
+                this.floatRadius = Math.random() * 20 + 5;
+            }
+            update() {
+                // Interactive mouse repulsion (Magnetic force)
+                const dxMouse = this.x - mouseX;
+                const dyMouse = this.y - mouseY;
+                const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                const interactionRadius = 200;
+
+                if (distMouse < interactionRadius) {
+                    const force = (interactionRadius - distMouse) / interactionRadius;
+                    this.vx += (dxMouse / distMouse) * force * 2.5; // push away strongly
+                    this.vy += (dyMouse / distMouse) * force * 2.5;
+                }
+
+                // Morphing force towards the Matrix Structure
+                let time = Date.now() * 0.0003;
+                let targetX = this.txBase;
+                let targetY = this.tyBase;
+                
+                if(!this.isDome) {
+                    let cx = width/2, cy = height/2;
+                    // Slow rotation of the geometric mandala
+                    targetX = cx + (this.txBase - cx) * Math.cos(time*0.2) - (this.tyBase - cy) * Math.sin(time*0.2);
+                    targetY = cy + (this.txBase - cx) * Math.sin(time*0.2) + (this.tyBase - cy) * Math.cos(time*0.2);
+                }
+
+                // Micro floating for holographic/virtual vibe
+                targetX += Math.cos(time * 3 + this.angleOffset) * this.floatRadius;
+                targetY += Math.sin(time * 3 + this.angleOffset) * this.floatRadius;
+
+                // Move towards calculated target (spring physics)
+                const dxTarget = targetX - this.x;
+                const dyTarget = targetY - this.y;
+                
+                this.vx += dxTarget * 0.004;
+                this.vy += dyTarget * 0.004;
+
+                // Friction / Damping
+                this.vx *= 0.88;
+                this.vy *= 0.88;
+
+                this.x += this.vx;
+                this.y += this.vy;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(33, 185, 198, 0.8)';
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = 'rgba(33, 185, 198, 0.5)';
+                ctx.fill();
+                ctx.shadowBlur = 0; // reset for lines
+            }
+        }
+        for(let i=0; i<NUM_PARTICLES; i++) particles.push(new Particle(i));
+
+        
+        function animateTech() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            for(let i=0; i<particles.length; i++) {
+                for(let j=i+1; j<particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if(dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(33, 185, 198, ${0.15 - dist/1000})`;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateTech);
+        }
+        animateTech();
+
+        // --- Smoke Parallax & Mouse Move ---
+        document.addEventListener('mousemove', (e) => {
+            // Update particle mouse pos
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Smoke Parallax
+            const x = (e.clientX / window.innerWidth - 0.5) * 80; // offset amount
+            const y = (e.clientY / window.innerHeight - 0.5) * 50;
+            
+            const s1 = document.getElementById('smoke-layer-1');
+            const s2 = document.getElementById('smoke-layer-2');
+            
+            if(s1) s1.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+            if(s2) s2.style.transform = `translate(${-x * 0.6}px, ${y * 0.6}px) scale(1.15)`;
+        });
+        
+        document.addEventListener('mouseleave', () => {
+            mouseX = -1000;
+            mouseY = -1000;
+        });
+        
+        window.addEventListener('resize', () => {
+            updateUI();
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+            // --- Custom Cursor ---
+        const cursorDot = document.getElementById('custom-cursor-dot');
+        const cursorGlow = document.getElementById('custom-cursor-glow');
+        let cx = window.innerWidth / 2;
+        let cy = window.innerHeight / 2;
+        let gx = cx;
+        let gy = cy;
+        let glowScale = 1;
+        let targetGlowScale = 1;
+
+        document.addEventListener('mousemove', (e) => {
+            cx = e.clientX;
+            cy = e.clientY;
+            if(cursorDot) {
+                cursorDot.style.transform = `translate(${cx}px, ${cy}px)`;
+            }
+        });
+
+        function animateCustomCursor() {
+            gx += (cx - gx) * 0.15;
+            gy += (cy - gy) * 0.15;
+            glowScale += (targetGlowScale - glowScale) * 0.15;
+            
+            if(cursorGlow) {
+                cursorGlow.style.transform = `translate(${gx}px, ${gy}px) scale(${glowScale})`;
+            }
+            requestAnimationFrame(animateCustomCursor);
+        }
+        animateCustomCursor();
+
+        document.addEventListener('mouseenter', () => {
+            if(cursorDot) cursorDot.style.opacity = '1';
+            if(cursorGlow) cursorGlow.style.opacity = '1';
+        });
+        document.addEventListener('mouseleave', () => {
+            if(cursorDot) cursorDot.style.opacity = '0';
+            if(cursorGlow) cursorGlow.style.opacity = '0';
+        });
+
+        function initCursorHovers() {
+            const clickables = document.querySelectorAll('a, button, .card, .timeline-node, .nav-link, .nav-btn-circle, .header-left, .logo-container, .team-holo-card, .project-creative-card, .services-menu-item, .services-menu-item');
+            clickables.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    targetGlowScale = 1.5;
+                    if(cursorGlow) cursorGlow.classList.add('cursor-hovering');
+                });
+                el.addEventListener('mouseleave', () => {
+                    targetGlowScale = 1;
+                    if(cursorGlow) cursorGlow.classList.remove('cursor-hovering');
+                });
+            });
+        }
+        initCursorHovers();
+
+// --- Services Menu Logic ---
+        const serviceMenuItems = document.querySelectorAll('.services-menu-item');
+        const smImg = document.getElementById('smImg');
+        const smTitle = document.getElementById('smTitle');
+        const smDesc = document.getElementById('smDesc');
+        const smSubtitle = document.getElementById('smSubtitle');
+        const smIcon = document.getElementById('smIcon');
+        const smContentBlock = document.getElementById('smContentBlock');
+
+        serviceMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active from all
+                serviceMenuItems.forEach(el => el.classList.remove('active'));
+                // Add active to clicked
+                item.classList.add('active');
+
+                // Re-trigger animation
+                smContentBlock.classList.remove('fade-in-content');
+                void smContentBlock.offsetWidth; // trigger reflow
+                smContentBlock.classList.add('fade-in-content');
+
+                // Update content
+                smImg.src = item.dataset.img;
+                smTitle.textContent = item.dataset.title;
+                smDesc.textContent = item.dataset.desc;
+                
+                // Extract subtitle and icon from children
+                const iconText = item.querySelector('.menu-item-icon').textContent;
+                const subtitleText = item.querySelector('[id$="-subtitle"]').textContent;
+                
+                smIcon.textContent = iconText;
+                smSubtitle.textContent = subtitleText;
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+
+        </script>
+<script type="module" src="data-loader.js">        // --- Tech Particle Background ---
+        const canvas = document.getElementById('tech-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+        let particles = [];
+        let mouseX = -1000;
+        let mouseY = -1000;
+        
+        
+        const NUM_PARTICLES = 160;
+        class Particle {
+            constructor(index) {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.baseVx = (Math.random() - 0.5) * 0.4;
+                this.baseVy = (Math.random() - 0.5) * 0.4;
+                this.vx = this.baseVx;
+                this.vy = this.baseVy;
+                this.size = Math.random() * 1.5 + 0.8;
+
+                // Virtual Islamic Architecture Geometry (Rub el Hizb 8-pointed star & Dome Arch)
+                let angle = (index / NUM_PARTICLES) * Math.PI * 2;
+                let radiusBase = Math.min(width, height) * 0.38;
+                
+                let cos1 = Math.abs(Math.cos(angle));
+                let sin1 = Math.abs(Math.sin(angle));
+                let cos2 = Math.abs(Math.cos(angle - Math.PI/4));
+                let sin2 = Math.abs(Math.sin(angle - Math.PI/4));
+                
+                let r1 = 1 / Math.max(cos1, sin1);
+                let r2 = 1 / Math.max(cos2, sin2);
+                let r = radiusBase * 0.8 * Math.max(r1, r2); // The 8-pointed star equation
+                
+                if (index % 5 === 0) r = radiusBase * 1.1; // Outer bounding cosmic circle
+                else if (index % 5 === 1) r = radiusBase * 0.3; // Inner core circle
+                else if (index % 5 === 2) {
+                    // Dome / Arch parametric shape
+                    let t = (index / NUM_PARTICLES) * Math.PI;
+                    this.txBase = width/2 + Math.cos(t) * radiusBase * 1.8;
+                    this.tyBase = height/2 - Math.abs(Math.sin(t)) * radiusBase * 1.5 + radiusBase * 0.8;
+                    this.isDome = true;
+                }
+
+                if(!this.isDome) {
+                    this.txBase = width/2 + r * Math.cos(angle);
+                    this.tyBase = height/2 + r * Math.sin(angle);
+                }
+                
+                this.angleOffset = angle;
+                this.floatRadius = Math.random() * 20 + 5;
+            }
+            update() {
+                // Interactive mouse repulsion (Magnetic force)
+                const dxMouse = this.x - mouseX;
+                const dyMouse = this.y - mouseY;
+                const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                const interactionRadius = 200;
+
+                if (distMouse < interactionRadius) {
+                    const force = (interactionRadius - distMouse) / interactionRadius;
+                    this.vx += (dxMouse / distMouse) * force * 2.5; // push away strongly
+                    this.vy += (dyMouse / distMouse) * force * 2.5;
+                }
+
+                // Morphing force towards the Matrix Structure
+                let time = Date.now() * 0.0003;
+                let targetX = this.txBase;
+                let targetY = this.tyBase;
+                
+                if(!this.isDome) {
+                    let cx = width/2, cy = height/2;
+                    // Slow rotation of the geometric mandala
+                    targetX = cx + (this.txBase - cx) * Math.cos(time*0.2) - (this.tyBase - cy) * Math.sin(time*0.2);
+                    targetY = cy + (this.txBase - cx) * Math.sin(time*0.2) + (this.tyBase - cy) * Math.cos(time*0.2);
+                }
+
+                // Micro floating for holographic/virtual vibe
+                targetX += Math.cos(time * 3 + this.angleOffset) * this.floatRadius;
+                targetY += Math.sin(time * 3 + this.angleOffset) * this.floatRadius;
+
+                // Move towards calculated target (spring physics)
+                const dxTarget = targetX - this.x;
+                const dyTarget = targetY - this.y;
+                
+                this.vx += dxTarget * 0.004;
+                this.vy += dyTarget * 0.004;
+
+                // Friction / Damping
+                this.vx *= 0.88;
+                this.vy *= 0.88;
+
+                this.x += this.vx;
+                this.y += this.vy;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(33, 185, 198, 0.8)';
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = 'rgba(33, 185, 198, 0.5)';
+                ctx.fill();
+                ctx.shadowBlur = 0; // reset for lines
+            }
+        }
+        for(let i=0; i<NUM_PARTICLES; i++) particles.push(new Particle(i));
+
+        
+        function animateTech() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            for(let i=0; i<particles.length; i++) {
+                for(let j=i+1; j<particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if(dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(33, 185, 198, ${0.15 - dist/1000})`;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateTech);
+        }
+        animateTech();
+
+        // --- Smoke Parallax & Mouse Move ---
+        document.addEventListener('mousemove', (e) => {
+            // Update particle mouse pos
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Smoke Parallax
+            const x = (e.clientX / window.innerWidth - 0.5) * 80; // offset amount
+            const y = (e.clientY / window.innerHeight - 0.5) * 50;
+            
+            const s1 = document.getElementById('smoke-layer-1');
+            const s2 = document.getElementById('smoke-layer-2');
+            
+            if(s1) s1.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+            if(s2) s2.style.transform = `translate(${-x * 0.6}px, ${y * 0.6}px) scale(1.15)`;
+        });
+        
+        document.addEventListener('mouseleave', () => {
+            mouseX = -1000;
+            mouseY = -1000;
+        });
+        
+        window.addEventListener('resize', () => {
+            updateUI();
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+    </script></body>
 </html>
