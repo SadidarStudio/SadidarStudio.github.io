@@ -3,8 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سدیدار | فراتر از دیدن، نزدیک‌تر به معنا</title>
-    <!-- فونت وزیرمتن -->
+    <title>سدیدار | استودیو فناوری‌های تعاملی، واقعیت مجازی، واقعیت افزوده و بازی‌سازی</title>
+    <meta name="description" content="سدیدار تجربه‌هایی می‌سازد که از تماشا فراتر می‌روند؛ استودیو خلاق و فناورانه در حوزه بازی‌های ویدیویی، واقعیت مجازی (VR)، واقعیت افزوده (AR) و شبیه‌سازی‌های تعاملی.">
+    <meta name="keywords" content="سدیدار, استودیو سدیدار, Sadidar, واقعیت مجازی, واقعیت افزوده, VR, AR, بازی سازی, شبیه سازی تاریخی, انیمیشن هوش مصنوعی, تجارب تعاملی">
+    <meta name="author" content="استودیو سدیدار">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://sadidarstudio.github.io/">
+    
+    <!-- OpenGraph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="استودیو سدیدار | Sadidar Studio">
+    <meta property="og:url" content="https://sadidarstudio.github.io/">
+    <meta property="og:title" content="سدیدار | فراتر از دیدن، نزدیک‌تر به معنا">
+    <meta property="og:description" content="سدیدار تجربه‌هایی می‌سازد که از تماشا فراتر می‌روند؛ تجربه‌هایی درست، معنادار و اثرگذار برای فرهنگ، آموزش و سرگرمی تعاملی.">
+    <meta property="og:image" content="image.png">
+    <meta property="og:locale" content="fa_IR">
+    
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sadidarstudio.github.io/">
+    <meta name="twitter:title" content="استودیو سدیدار | فراتر از دیدن، نزدیک‌تر به معنا">
+    <meta name="twitter:description" content="تولید تجارب تعاملی، بازی‌های ویدیویی، واقعیت مجازی (VR)، واقعیت افزوده (AR) و تولید محتوای هوش مصنوعی.">
+    <meta name="twitter:image" content="image.png">
+    
+    <!-- Favicon & PWA Icons -->
+    <link rel="icon" type="image/png" href="image.png">
+    <link rel="apple-touch-icon" href="image.png">
+    <meta name="theme-color" content="#05080e">
+
+    <!-- Schema.org Structured Data (JSON-LD) for Google & Rich Search Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://sadidarstudio.github.io/#organization",
+          "name": "استودیو سدیدار",
+          "alternateName": ["Sadidar", "Sadidar Studio", "سدیدار"],
+          "url": "https://sadidarstudio.github.io/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sadidarstudio.github.io/image.png"
+          },
+          "description": "سدیدار تجربه‌هایی می‌سازد که از تماشا فراتر می‌روند؛ تجربه‌هایی درست، معنادار و اثرگذار برای فرهنگ، آموزش و سرگرمی تعاملی در حوزه‌های بازی‌های ویدیویی، واقعیت مجازی (VR)، واقعیت افزوده (AR) و هوش مصنوعی.",
+          "slogan": "فراتر از دیدن، نزدیک‌تر به معنا",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+98-902-680-3714",
+            "contactType": "customer service",
+            "email": "SadidarStudio@gmail.com",
+            "availableLanguage": ["Persian", "English"]
+          },
+          "sameAs": [
+            "https://instagram.com/SadidarStudio"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sadidarstudio.github.io/#website",
+          "url": "https://sadidarstudio.github.io/",
+          "name": "سدیدار",
+          "description": "استودیو فناوری‌های تعاملی، بازی‌سازی، واقعیت مجازی و واقعیت افزوده",
+          "publisher": {
+            "@id": "https://sadidarstudio.github.io/#organization"
+          },
+          "inLanguage": "fa-IR"
+        }
+      ]
+    }
+    </script>
+
+    <!-- فونت بهینه‌شده وزیرمتن -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
     <style>
         :root {
@@ -100,6 +172,210 @@
             width: 100%;
             height: 2px;
             background-color: var(--accent-gold);
+        }
+
+        .header-desktop-contact {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--text-muted);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(33, 185, 198, 0.1);
+            border: 1px solid rgba(33, 185, 198, 0.3);
+            border-radius: 10px;
+            color: var(--text-white);
+            padding: 8px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover, .mobile-menu-btn:focus {
+            background: rgba(33, 185, 198, 0.2);
+            border-color: var(--accent-teal);
+            outline: none;
+        }
+
+        /* --- Mobile Navigation Drawer --- */
+        .mobile-nav-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1000;
+            pointer-events: none;
+            visibility: hidden;
+            transition: visibility 0.35s ease;
+        }
+
+        .mobile-nav-drawer.open {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .mobile-nav-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(1, 15, 30, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .mobile-nav-drawer.open .mobile-nav-backdrop {
+            opacity: 1;
+        }
+
+        .mobile-nav-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 84%;
+            max-width: 340px;
+            height: 100%;
+            background: rgba(1, 31, 65, 0.98);
+            border-left: 1px solid rgba(33, 185, 198, 0.25);
+            box-shadow: -10px 0 35px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 20px;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-nav-drawer.open .mobile-nav-content {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 18px;
+        }
+
+        .mobile-drawer-close-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-white);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .mobile-drawer-close-btn:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 0.98rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .mobile-nav-item:hover, .mobile-nav-item.active {
+            background: rgba(33, 185, 198, 0.14);
+            border-color: rgba(33, 185, 198, 0.35);
+            color: var(--accent-gold);
+        }
+
+        .mobile-nav-item .m-icon {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .mobile-nav-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .mobile-nav-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-gold), #b37719);
+            color: #011F41;
+            font-weight: 800;
+            padding: 13px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 20px rgba(223, 163, 56, 0.35);
+        }
+
+        /* --- Floating Back to Top Button --- */
+        .btn-back-to-top {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(1, 31, 65, 0.9);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(33, 185, 198, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 90;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .btn-back-to-top:hover {
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(33, 185, 198, 0.5);
         }
 
         /* --- Main Horizontal Layout (Desktop) --- */
@@ -358,40 +634,1084 @@
             transition: width var(--transition-speed) ease;
         }
 
-        /* --- Responsive / Mobile Fallback --- */
+        /* --- Hero Flex Layout (Desktop default) --- */
+        .hero-content-flex {
+            display: flex;
+            width: 100%;
+            max-width: 1600px;
+            padding: 0 50px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-text-col {
+            flex: 1.1;
+            z-index: 10;
+            text-align: right;
+        }
+
+        .hero-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(33, 185, 198, 0.08);
+            border: 1px solid rgba(33, 185, 198, 0.25);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+            box-shadow: 0 0 10px var(--accent-teal);
+        }
+
+        .hero-badge-text {
+            color: var(--accent-teal);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero-main-title {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 22px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-title-gradient {
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-gallery-col {
+            flex: 1.1;
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .hero-card-pos {
+            position: absolute;
+            transition: all 0.4s ease;
+        }
+
+        .hero-card-left-pos {
+            left: -8%;
+            animation-delay: -2s;
+            z-index: 1;
+        }
+
+        .hero-card-right-pos {
+            right: -5%;
+            z-index: 1;
+        }
+
+        .hero-card-center-pos {
+            z-index: 5;
+            animation-delay: -1s;
+        }
+
+        .hero-3d-card {
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .hero-3d-left {
+            width: 270px;
+            height: 360px;
+            background-image: url('/src/assets/images/project_mepel_ar_1790779265402.jpg');
+            transform: rotateY(25deg) scale(0.85);
+            opacity: 0.75;
+        }
+
+        .hero-3d-right {
+            width: 270px;
+            height: 360px;
+            background-image: url('/src/assets/images/project_vr_sanctuary_1790779293365.jpg');
+            transform: rotateY(-25deg) scale(0.85);
+            opacity: 0.75;
+        }
+
+        .hero-3d-center {
+            width: 360px;
+            height: 460px;
+            background-image: url('/src/assets/images/minimal_vr_headset_1789142033394.jpg');
+            transform: translateZ(50px);
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(33, 185, 198, 0.4);
+            border: 1px solid rgba(33, 185, 198, 0.35);
+            filter: contrast(1.1) brightness(1.05);
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        /* --- Comprehensive Responsive Styles for Mobile & Tablet --- */
         @media (max-width: 1024px) {
+            html {
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+            }
             body {
-                overflow-y: auto;
-                height: auto;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+                width: 100vw !important;
+                max-width: 100vw !important;
+                position: relative;
             }
             .viewport-wrapper {
-                height: auto;
-                overflow: visible;
+                height: auto !important;
+                overflow: visible !important;
+                width: 100% !important;
             }
             .horizontal-slider {
-                flex-direction: column;
+                flex-direction: column !important;
                 width: 100% !important;
-                height: auto;
+                height: auto !important;
                 transform: none !important;
             }
             section {
-                width: 100%;
-                height: auto;
-                min-height: 100vh;
-                padding: 100px 20px 40px 20px;
+                width: 100% !important;
+                max-width: 100vw !important;
+                height: auto !important;
+                min-height: auto !important;
+                padding: 100px 24px 60px 24px !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
             }
-            .hero-grid {
-                grid-template-columns: 1fr;
+            .section-content {
+                height: auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
             footer {
-                display: none; /* هدر و اسکرول لمسی موبایل جایگزین کنترلر می‌شود */
+                display: none !important;
+            }
+            
+            /* Header */
+            header {
+                padding: 14px 20px !important;
+                height: 70px !important;
+                background: rgba(1, 31, 65, 0.94) !important;
+                backdrop-filter: blur(16px) !important;
+                -webkit-backdrop-filter: blur(16px) !important;
+                border-bottom: 1px solid rgba(33, 185, 198, 0.15) !important;
+            }
+            .nav-desktop {
+                display: none !important;
+            }
+            .header-desktop-contact {
+                display: none !important;
+            }
+            .mobile-menu-btn {
+                display: flex !important;
+            }
+
+            /* Hero on Tablet & Mobile */
+            .hero-content-flex {
+                flex-direction: column-reverse !important;
+                gap: 32px !important;
+                padding: 15px 8px 25px !important;
+                text-align: center !important;
+            }
+            .hero-text-col {
+                width: 100% !important;
+                text-align: center !important;
+            }
+            .hero-badge-pill {
+                margin: 0 auto 16px auto !important;
+            }
+            .hero-main-title {
+                font-size: 2.9rem !important;
+                line-height: 1.3 !important;
+                margin-bottom: 18px !important;
+            }
+            .hero-desc-text {
+                font-size: 1.05rem !important;
+                line-height: 2 !important;
+                margin: 0 auto 24px auto !important;
+                text-align: center !important;
+                max-width: 620px !important;
+            }
+            .hero-cta-btns {
+                justify-content: center !important;
+            }
+            .hero-gallery-col {
+                width: 100% !important;
+                max-width: 480px !important;
+                height: 340px !important;
+                margin: 0 auto !important;
+                perspective: 800px !important;
+            }
+            .hero-card-left-pos {
+                left: 2% !important;
+            }
+            .hero-card-right-pos {
+                right: 2% !important;
+            }
+            .hero-3d-left {
+                width: 200px !important;
+                height: 270px !important;
+                transform: rotateY(20deg) scale(0.85) !important;
+            }
+            .hero-3d-right {
+                width: 200px !important;
+                height: 270px !important;
+                transform: rotateY(-20deg) scale(0.85) !important;
+            }
+            .hero-3d-center {
+                width: 270px !important;
+                height: 330px !important;
+            }
+
+            /* Section 1: About */
+            .about-quote-banner {
+                font-size: 1.1rem !important;
+                padding: 16px 18px !important;
+                line-height: 1.8 !important;
+            }
+            .about-pillars-grid {
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
+            }
+
+            /* Section 2: Activities & Services */
+            .sec2-tabs-container {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 16px !important;
+            }
+            .sec2-tabs-nav {
+                width: 100% !important;
+                display: flex !important;
+            }
+            .sec2-tab-btn {
+                flex: 1 !important;
+                text-align: center !important;
+                justify-content: center !important;
+                padding: 10px 14px !important;
+            }
+            .activities-grid-4x2 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+            }
+            .activity-mini-card {
+                padding: 14px 12px !important;
+                min-height: 72px !important;
+            }
+            .activity-mini-title {
+                font-size: 0.86rem !important;
+            }
+            .services-cards-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            /* Section 3: Projects */
+            .projects-showcase-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 16px !important;
+            }
+            .projects-showcase-header > div:last-child {
+                width: 100% !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                flex-wrap: wrap !important;
+                gap: 10px !important;
+            }
+            .projects-filter-bar {
+                display: flex !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                scrollbar-width: none !important;
+                padding-bottom: 4px !important;
+                gap: 8px !important;
+                max-width: 100% !important;
+            }
+            .projects-filter-bar::-webkit-scrollbar {
+                display: none !important;
+            }
+            .project-filter-btn {
+                white-space: nowrap !important;
+                flex-shrink: 0 !important;
+            }
+            .projects-scroll-track {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                -webkit-overflow-scrolling: touch !important;
+                gap: 16px !important;
+                padding: 10px 4px 20px 4px !important;
+                scrollbar-width: thin !important;
+                scrollbar-color: var(--accent-teal) transparent !important;
+            }
+            .project-modern-card {
+                flex: 0 0 310px !important;
+                max-width: 82vw !important;
+                scroll-snap-align: start !important;
+            }
+
+            /* Section 4: Team */
+            .team-holo-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 20px !important;
+                margin-top: 25px !important;
+                perspective: none !important;
+            }
+            .team-holo-card {
+                width: 100% !important;
+                height: 350px !important;
+                transform: none !important;
+                cursor: pointer !important;
+            }
+            .team-holo-card:nth-child(n) {
+                --offset-y: 0px !important;
+                transform: none !important;
+            }
+            .team-holo-card .team-holo-image {
+                filter: grayscale(15%) contrast(1.1) brightness(0.9) !important;
+            }
+            .team-holo-overlay {
+                background: linear-gradient(to top, rgba(1,31,65,0.98) 0%, rgba(1,31,65,0.85) 65%, transparent 100%) !important;
+                padding: 16px 14px !important;
+            }
+            .team-expertise-box {
+                opacity: 1 !important;
+                max-height: 90px !important;
+                font-size: 0.78rem !important;
+                line-height: 1.45 !important;
+                margin-top: 8px !important;
+            }
+
+            /* Section 5: Contact */
+            .contact-methods-grid {
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
             }
             .contact-form {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
             }
             .form-group.full {
-                grid-column: span 1;
+                grid-column: span 1 !important;
             }
+            input, textarea {
+                font-size: 16px !important;
+                padding: 14px !important;
+            }
+            .btn-submit {
+                width: 100% !important;
+                justify-content: center !important;
+                padding: 14px 24px !important;
+            }
+        }
+
+        /* --- Extra Small Screens / Mobile Phones (< 640px) --- */
+        @media (max-width: 640px) {
+            section {
+                padding: 85px 16px 50px 16px !important;
+            }
+            .hero-main-title {
+                font-size: 2.15rem !important;
+                line-height: 1.35 !important;
+                margin-bottom: 14px !important;
+            }
+            .hero-desc-text {
+                font-size: 0.95rem !important;
+                line-height: 1.85 !important;
+                margin-bottom: 20px !important;
+            }
+            .hero-cta-btns {
+                flex-direction: column !important;
+                width: 100% !important;
+                gap: 12px !important;
+            }
+            .btn-primary-glow, .btn-secondary-glow {
+                width: 100% !important;
+                justify-content: center !important;
+                padding: 13px 20px !important;
+                box-sizing: border-box !important;
+            }
+            .hero-gallery-col {
+                max-width: 320px !important;
+                height: 250px !important;
+                perspective: 600px !important;
+            }
+            .hero-card-left-pos {
+                left: 2% !important;
+            }
+            .hero-card-right-pos {
+                right: 2% !important;
+            }
+            .hero-3d-left {
+                width: 130px !important;
+                height: 180px !important;
+                transform: rotateY(16deg) scale(0.85) !important;
+                opacity: 0.6 !important;
+            }
+            .hero-3d-right {
+                width: 130px !important;
+                height: 180px !important;
+                transform: rotateY(-16deg) scale(0.85) !important;
+                opacity: 0.6 !important;
+            }
+            .hero-3d-center {
+                width: 195px !important;
+                height: 245px !important;
+            }
+            .activities-grid-4x2 {
+                grid-template-columns: 1fr !important;
+            }
+            .team-holo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+            }
+            .team-holo-card {
+                max-width: 280px !important;
+                margin: 0 auto !important;
+                height: 340px !important;
+            }
+            .project-modern-card {
+                flex: 0 0 280px !important;
+                max-width: 85vw !important;
+            }
+        }
+
+        /* --- Enhanced Sadidar Redesign Styles --- */
+        .hero-desc-text {
+            font-size: 1.15rem;
+            line-height: 2.1;
+            color: #94a3b8;
+            max-width: 620px;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .hero-cta-btns {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-glow {
+            background: linear-gradient(135deg, var(--accent-gold), #c98a22);
+            color: #011F41;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 12px 28px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(223, 163, 56, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-primary-glow:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 30px rgba(223, 163, 56, 0.55);
+        }
+
+        .btn-secondary-glow {
+            background: rgba(33, 185, 198, 0.08);
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 26px;
+            border-radius: 12px;
+            border: 1px solid rgba(33, 185, 198, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            text-decoration: none;
+        }
+
+        .btn-secondary-glow:hover {
+            background: rgba(33, 185, 198, 0.2);
+            border-color: var(--accent-teal);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(33, 185, 198, 0.3);
+        }
+
+        /* --- About Us Styles --- */
+        .about-quote-banner {
+            background: linear-gradient(90deg, rgba(223, 163, 56, 0.14), rgba(33, 185, 198, 0.08));
+            border-right: 4px solid var(--accent-gold);
+            border-left: 1px solid rgba(33, 185, 198, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 22px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            line-height: 1.8;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-text-content {
+            font-size: 1.1rem;
+            line-height: 2.15;
+            color: #cbd5e1;
+            max-width: 950px;
+            text-align: justify;
+        }
+
+        .about-text-content p {
+            margin-bottom: 14px;
+        }
+
+        .about-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 22px;
+            width: 100%;
+            max-width: 950px;
+        }
+
+        .about-pillar-card {
+            background: rgba(12, 20, 33, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .about-pillar-card:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(33, 185, 198, 0.15);
+        }
+
+        .about-pillar-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .about-pillar-title {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 3px;
+        }
+
+        .about-pillar-desc {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* --- Section 2: Tabs, Activities 4x2 & Services 3x2 --- */
+        .sec2-tabs-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .sec2-tabs-nav {
+            display: inline-flex;
+            background: rgba(12, 20, 33, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 5px;
+            border-radius: 35px;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sec2-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sec2-tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-teal), #158f8f);
+            color: #011F41;
+            font-weight: 800;
+            box-shadow: 0 4px 20px rgba(33, 185, 198, 0.4);
+        }
+
+        /* 4x2 Activities Grid (Two rows of 4 items) */
+        .activities-grid-4x2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            width: 100%;
+            margin-top: 18px;
+        }
+
+        .activity-mini-card {
+            background: rgba(12, 20, 33, 0.75);
+            border: 1px solid rgba(33, 185, 198, 0.18);
+            border-radius: 14px;
+            padding: 16px 14px;
+            display: flex;
+            align-items: center;
+            text-align: right;
+            gap: 12px;
+            transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+            min-height: 80px;
+        }
+
+        .activity-mini-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent-teal), transparent);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .activity-mini-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(33, 185, 198, 0.55);
+            background: rgba(15, 25, 42, 0.95);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), 0 0 20px rgba(33, 185, 198, 0.18);
+        }
+
+        .activity-mini-card:hover::before {
+            opacity: 1;
+        }
+
+        .activity-mini-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(33, 185, 198, 0.08);
+            border: 1px solid rgba(33, 185, 198, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--accent-teal);
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .activity-mini-card:hover .activity-mini-icon {
+            background: var(--accent-teal);
+            color: #011F41;
+            transform: scale(1.06);
+            box-shadow: 0 0 16px rgba(33, 185, 198, 0.45);
+        }
+
+        .activity-mini-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text-white);
+            line-height: 1.45;
+            text-wrap: balance;
+        }
+
+        /* 3x2 Services Grid (Clean modern cards) */
+        .services-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .service-box-card {
+            background: rgba(12, 20, 33, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 24px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            backdrop-filter: blur(12px);
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            text-align: right;
+        }
+
+        .service-box-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(223, 163, 56, 0.4);
+            background: rgba(12, 20, 33, 0.9);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(223, 163, 56, 0.15);
+        }
+
+        .service-box-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .service-box-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(223, 163, 56, 0.1);
+            border: 1px solid rgba(223, 163, 56, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .service-box-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-white);
+        }
+
+        .service-box-desc {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: #94a3b8;
+        }
+
+        /* --- Section 3: Projects (10 Projects Carousel / Showcase) --- */
+        .projects-showcase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .projects-filter-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-filter-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .project-filter-btn.active, .project-filter-btn:hover {
+            background: rgba(33, 185, 198, 0.15);
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+            box-shadow: 0 0 12px rgba(33, 185, 198, 0.3);
+        }
+
+        .projects-carousel-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .projects-scroll-track {
+            display: flex;
+            gap: 22px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 12px 5px 22px 5px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-teal) rgba(255, 255, 255, 0.05);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .projects-scroll-track::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .projects-scroll-track::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        .projects-scroll-track::-webkit-scrollbar-thumb {
+            background: var(--accent-teal);
+            border-radius: 4px;
+        }
+
+        .project-modern-card {
+            flex: 0 0 340px;
+            background: rgba(12, 20, 33, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            text-align: right;
+        }
+
+        .project-modern-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(33, 185, 198, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(33, 185, 198, 0.15);
+        }
+
+        .project-card-media {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: contrast(1.05);
+        }
+
+        .project-modern-card:hover .project-card-media img {
+            transform: scale(1.08);
+        }
+
+        .project-card-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            padding: 5px 14px;
+            background: rgba(1, 31, 65, 0.85);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card-badge.gold {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .project-card-badge.purple {
+            border-color: #a855f7;
+            color: #c084fc;
+        }
+
+        .project-card-body {
+            padding: 20px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .project-card-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0;
+        }
+
+        .project-card-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 0.88rem;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border-right: 2px solid rgba(33, 185, 198, 0.4);
+        }
+
+        .project-card-row.achieve-row {
+            border-right-color: var(--accent-gold);
+            background: rgba(223, 163, 56, 0.04);
+        }
+
+        .project-card-row strong {
+            color: #e2e8f0;
+            font-weight: 700;
+            font-size: 0.82rem;
+        }
+
+        .project-card-row span {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .carousel-arrows {
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-arrow-btn {
+            background: rgba(12, 20, 33, 0.85);
+            border: 1px solid rgba(33, 185, 198, 0.3);
+            color: var(--text-white);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            font-size: 1.1rem;
+        }
+
+        .carousel-arrow-btn:hover {
+            background: var(--accent-teal);
+            color: #011F41;
+            box-shadow: 0 0 15px rgba(33, 185, 198, 0.5);
+            transform: scale(1.08);
+        }
+
+        /* --- Section 4: Enhanced Team Cards --- */
+        .team-holo-card {
+            height: 390px !important;
+            width: 230px !important;
+        }
+
+        .team-expertise-box {
+            font-size: 0.78rem;
+            line-height: 1.6;
+            color: #94a3b8;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* --- Section 5: Contact Enhanced --- */
+        .contact-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 22px;
+            width: 100%;
+        }
+
+        .contact-channel-card {
+            background: rgba(12, 20, 33, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-align: right;
+        }
+
+        .contact-channel-card:hover {
+            border-color: var(--accent-teal);
+            background: rgba(12, 20, 33, 0.9);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(33, 185, 198, 0.2);
+        }
+
+        .contact-channel-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: rgba(33, 185, 198, 0.1);
+            border: 1px solid rgba(33, 185, 198, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--accent-teal);
+            flex-shrink: 0;
+        }
+
+        .contact-channel-info h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+            font-weight: 500;
+        }
+
+        .contact-channel-info p {
+            font-size: 1rem;
+            color: var(--text-white);
+            font-weight: 700;
+            direction: ltr;
+            text-align: right;
+            margin: 0;
+        }
+
+        .contact-feedback-toast {
+            display: none;
+            background: rgba(33, 185, 198, 0.15);
+            border: 1px solid var(--accent-teal);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.95rem;
+            animation: fadeInToast 0.4s ease;
+        }
+
+        @keyframes fadeInToast {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     
         .hero-bg-glow {
@@ -970,34 +2290,80 @@
     <div style="position: fixed; bottom: 0; left: 0; width: 100vw; height: 35vh; z-index: -1; pointer-events: none; background: linear-gradient(to top, var(--bg-dark) 0%, transparent 100%);"></div>
 
 
-            <header style="background: transparent; padding: 20px 50px;">
-        <div class="logo-container">
+    <header id="mainHeader">
+        <div class="logo-container" onclick="goToSlide(0)" style="cursor: pointer;">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <img src="image.png" alt="Sadidar Logo" style="height: 40px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(33,185,198,0.5));">
+                <img src="image.png" alt="Sadidar Logo" style="height: 44px; object-fit: contain; filter: drop-shadow(0 0 12px rgba(33,185,198,0.6));">
                 <div style="display: flex; flex-direction: column; align-items: flex-start; text-align: right;">
-                    <span style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px; color: white;">سدیدار</span>
-                    <span style="font-size: 0.6rem; letter-spacing: 4px; color: var(--text-muted); text-transform: uppercase;">S A D I D A R</span>
+                    <span style="font-size: 1.55rem; font-weight: 900; letter-spacing: 1px; color: white;">سدیدار</span>
+                    <span style="font-size: 0.62rem; letter-spacing: 4px; color: var(--text-muted); text-transform: uppercase;">S A D I D A R</span>
                 </div>
             </div>
         </div>
         
-        <nav style="flex: 1; display: flex; justify-content: center;">
-            <ul class="nav-menu" style="gap: 40px; display: flex; list-style: none;">
+        <nav class="nav-desktop" style="flex: 1; display: flex; justify-content: center;">
+            <ul class="nav-menu" style="gap: 35px; display: flex; list-style: none;">
                 <li><a class="nav-link active" onclick="goToSlide(0)" id="nav-0">خانه</a></li>
                 <li><a class="nav-link" onclick="goToSlide(1)" id="nav-1">درباره ما</a></li>
-                <li><a class="nav-link" onclick="goToSlide(2)" id="nav-2">خدمات</a></li>
-                <li><a class="nav-link" onclick="goToSlide(3)" id="nav-3">پروژه‌ها</a></li>
+                <li><a class="nav-link" onclick="goToSlide(2)" id="nav-2">حوزه‌ها و خدمات</a></li>
+                <li><a class="nav-link" onclick="goToSlide(3)" id="nav-3">تجربه‌های منتخب</a></li>
                 <li><a class="nav-link" onclick="goToSlide(4)" id="nav-4">تیم ما</a></li>
                 <li><a class="nav-link" onclick="goToSlide(5)" id="nav-5">تماس</a></li>
             </ul>
         </nav>
 
-        <div class="header-left" style="display: flex; align-items: center; gap: 20px; color: var(--text-muted); cursor: pointer;">
-            <span style="font-size: 0.9rem;">FA ˅</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <div class="header-desktop-contact">
+            <a href="tel:09026803714" style="color: var(--accent-gold); text-decoration: none; font-size: 0.88rem; font-weight: 700; direction: ltr; display: flex; align-items: center; gap: 6px;">
+                <span>09026803714</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+            <span style="font-size: 0.85rem; padding: 4px 10px; background: rgba(255,255,255,0.05); border-radius: 20px;">FA</span>
         </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="منوی ناوبری" onclick="toggleMobileNav()">
+            <svg class="icon-menu-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <svg class="icon-menu-close" style="display: none;" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="mobile-nav-drawer">
+        <div class="mobile-nav-backdrop" onclick="toggleMobileNav(false)"></div>
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="image.png" alt="Sadidar Logo" style="height: 38px; object-fit: contain;">
+                    <div style="display: flex; flex-direction: column;">
+                        <span style="font-size: 1.3rem; font-weight: 800; color: white;">سدیدار</span>
+                        <span style="font-size: 0.62rem; letter-spacing: 2px; color: var(--accent-teal);">SADIDAR STUDIO</span>
+                    </div>
+                </div>
+                <button class="mobile-drawer-close-btn" onclick="toggleMobileNav(false)" aria-label="بستن منو">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <ul class="mobile-nav-list">
+                <li><a class="mobile-nav-item active" onclick="handleMobileNavClick(0)" id="m-nav-0"><span class="m-icon">🏠</span><span>صفحه اصلی</span></a></li>
+                <li><a class="mobile-nav-item" onclick="handleMobileNavClick(1)" id="m-nav-1"><span class="m-icon">✨</span><span>درباره سدیدار</span></a></li>
+                <li><a class="mobile-nav-item" onclick="handleMobileNavClick(2)" id="m-nav-2"><span class="m-icon">🌐</span><span>حوزه‌ها و خدمات</span></a></li>
+                <li><a class="mobile-nav-item" onclick="handleMobileNavClick(3)" id="m-nav-3"><span class="m-icon">🏆</span><span>تجربه‌های منتخب</span></a></li>
+                <li><a class="mobile-nav-item" onclick="handleMobileNavClick(4)" id="m-nav-4"><span class="m-icon">👥</span><span>تیم متخصصان</span></a></li>
+                <li><a class="mobile-nav-item" onclick="handleMobileNavClick(5)" id="m-nav-5"><span class="m-icon">📞</span><span>تماس و سفارش</span></a></li>
+            </ul>
+
+            <div class="mobile-nav-footer">
+                <a href="tel:09026803714" class="mobile-nav-cta">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>تماس مستقیم: ۰۹۰۲۶۸۰۳۷۱۴</span>
+                </a>
+                <div style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-top: 12px; direction: ltr;">
+                    SadidarStudio@gmail.com
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="viewport-wrapper">
         <div class="horizontal-slider" id="slider">
@@ -1006,248 +2372,637 @@
             <section id="sec-0" style="display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
                 <div class="hero-bg-glow"></div>
                 
-                <div style="display: flex; width: 100%; max-width: 1600px; padding: 0 50px; align-items: center; justify-content: space-between;">
+                <div class="hero-content-flex">
                     
                     <!-- Text Area (Right side visually, RTL flow) -->
-                    <div style="flex: 1; padding-left: 50px; z-index: 10; text-align: right;">
-                        <h4 style="color: var(--accent-teal); letter-spacing: 12px; font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; font-family: sans-serif;" id="hero-subtitle">S A D I D A R</h4>
-                        <h1 id="hero-title" class="interactive-text" style="font-size: 4.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 30px; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">فراتر از دیدن،<br>نزدیک‌تر به معنا</h1>
+                    <div class="hero-text-col">
+                        <div class="hero-badge-pill">
+                            <span class="hero-badge-dot"></span>
+                            <span class="hero-badge-text">استودیو سدیدار | SADIDAR</span>
+                        </div>
+
+                        <h1 id="hero-title" class="interactive-text hero-main-title">
+                            فراتر از دیدن،<br>
+                            <span class="hero-title-gradient">نزدیک‌تر به معنا</span>
+                        </h1>
                         
-                        <div style="display: flex; flex-direction: column; gap: 15px; width: 400px; margin-right: 0; margin-left: auto;">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <div style="height: 4px; width: 60px; background: var(--accent-teal);"></div>
-                                <div style="height: 4px; width: 10px; background: var(--accent-teal); opacity: 0.5;"></div>
-                            </div>
-                            <div style="height: 4px; width: 100%; background: rgba(255,255,255,0.1);"></div>
-                            <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
-                                <div style="height: 4px; width: 250px; background: rgba(255,255,255,0.1);"></div>
-                                <div style="height: 4px; width: 40px; background: var(--accent-gold);"></div>
-                            </div>
+                        <p id="hero-desc" class="hero-desc-text">
+                            سدیدار تجربه‌هایی می‌سازد که از تماشا فراتر می‌روند؛ تجربه‌هایی درست، معنادار و اثرگذار برای فرهنگ، آموزش و سرگرمی تعاملی.
+                        </p>
+
+                        <div class="hero-cta-btns">
+                            <button class="btn-primary-glow" onclick="goToSlide(3)">
+                                <span>مشاهده پروژه‌ها</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                            <button class="btn-secondary-glow" onclick="goToSlide(1)">
+                                درباره سدیدار
+                            </button>
+                            <button class="btn-secondary-glow" onclick="goToSlide(5)" style="border-color: rgba(223, 163, 56, 0.3); color: var(--accent-gold);">
+                                تماس با ما
+                            </button>
                         </div>
                     </div>
 
                     <!-- 3D Gallery Area (Left side) -->
-                    <div style="flex: 1.2; position: relative; height: 500px; display: flex; align-items: center; justify-content: center; perspective: 1000px;">
+                    <div class="hero-gallery-col">
                         <!-- Left card -->
-                        <div class="animate-float" style="position: absolute; left: -10%; animation-delay: -2s; z-index: 1;">
-                            <div style="width: 280px; height: 350px; background: url('https://images.unsplash.com/photo-1616499370260-485b3e5ed653?auto=format&fit=crop&w=400&q=80') center/cover; transform: rotateY(25deg) scale(0.85); border-radius: 10px; opacity: 0.6; box-shadow: 0 20px 40px rgba(0,0,0,0.8); filter: grayscale(50%) sepia(30%) hue-rotate(180deg);"></div>
+                        <div class="hero-card-pos hero-card-left-pos animate-float">
+                            <div class="hero-3d-card hero-3d-left"></div>
                         </div>
                         
                         <!-- Right card -->
-                        <div class="animate-float" style="position: absolute; right: -5%; z-index: 1;">
-                            <div style="width: 280px; height: 350px; background: url('https://images.unsplash.com/photo-1633511198642-7c385c94fb11?auto=format&fit=crop&w=400&q=80') center/cover; transform: rotateY(-25deg) scale(0.85); border-radius: 10px; opacity: 0.6; box-shadow: 0 20px 40px rgba(0,0,0,0.8); filter: grayscale(50%) sepia(30%) hue-rotate(180deg);"></div>
+                        <div class="hero-card-pos hero-card-right-pos animate-float">
+                            <div class="hero-3d-card hero-3d-right"></div>
                         </div>
                         
                         <!-- Center card -->
-                        <div class="animate-float" style="position: absolute; z-index: 5; animation-delay: -1s;">
-                            <div style="animation: pulseGlow 4s ease-in-out infinite; width: 380px; height: 480px; background: url('/src/assets/images/minimal_vr_headset_1789142033394.jpg') center/cover; transform: translateZ(50px); border-radius: 12px; box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(33, 185, 198, 0.4); border: 1px solid rgba(33, 185, 198, 0.3); filter: contrast(1.1) brightness(1.1);"></div>
+                        <div class="hero-card-pos hero-card-center-pos animate-float">
+                            <div class="hero-3d-card hero-3d-center"></div>
                         </div>
-</div>
+                    </div>
                 </div>
             </section>
 
             <!-- Section 2: About -->
             <section id="sec-1">
-                <div class="section-content">
+                <div class="section-content" style="max-width: 1100px;">
                     <h2 class="section-title interactive-text" id="title-about">درباره ما</h2>
-                    <p style="font-size: 1.3rem; line-height: 2; color: var(--text-muted); max-width: 800px;" id="text-about">
-                        ما در سدیدار بر این باوریم که رسانه‌های تعاملی، قدرتمندترین ابزار برای انتقال مفاهیم در دنیای امروز هستند. تیم ما متشکل از متخصصان خلاق در حوزه‌های هنر، طراحی و برنامه‌نویسی است که با هدف ارتقای سطح کیفی محصولات فرهنگی و آموزشی گرد هم آمده‌اند. از طراحی محیط‌های غوطه‌ورکننده تا توسعه بازی‌های جدی، هر پروژه برای ما فرصتی است تا مرزهای خلاقیت را جابجا کنیم و اثری ماندگار خلق نماییم.
-                    </p>
+                    
+                    <div class="about-quote-banner">
+                        «ما تازه شروع نکرده‌ایم، ما تجربه‌هایمان را در قالب یک مجموعه تازه کنار هم آورده‌ایم.»
+                    </div>
+
+                    <div class="about-text-content" id="text-about">
+                        <p>
+                            <strong>سدیدار</strong> مجموعه‌ای خلاق و فناورانه است که با تکیه بر تجربه‌ی تخصصی اعضای خود، در حوزه بازی، واقعیت مجازی، واقعیت افزوده و تولید تجربه‌های تعاملی فعالیت می‌کند. ما به ساخت تجربه‌هایی باور داریم که صرفاً جذاب و دیدنی نباشند، بلکه معنادار، هدفمند و اثرگذار باشند.
+                        </p>
+                        <p>
+                            ترکیب دانش فنی، طراحی هنری، روایت‌پردازی و شناخت مخاطب، هسته اصلی رویکرد ما در توسعه هر پروژه است. هدف ما تبدیل ایده‌ها، مفاهیم فرهنگی، آموزشی و خلاقانه به تجربه‌هایی ماندگار، قابل لمس و متناسب با فناوری‌های روز است.
+                        </p>
+                        <p style="color: var(--accent-gold); font-weight: 600;">
+                            در سدیدار تلاش می‌کنیم هر محصول، فراتر از یک اثر دیجیتال، تجربه‌ای «سدید» باشد؛ درست، ارزش‌آفرین و دارای اثری واقعی بر مخاطب.
+                        </p>
+                    </div>
+
+                    <div class="about-pillars-grid">
+                        <div class="about-pillar-card">
+                            <div class="about-pillar-icon">💎</div>
+                            <div>
+                                <div class="about-pillar-title">اثری «سدید» و ماندگار</div>
+                                <div class="about-pillar-desc">درست، هدفمند و ارزش‌آفرین بر ذهن و رفتار مخاطب</div>
+                            </div>
+                        </div>
+                        <div class="about-pillar-card">
+                            <div class="about-pillar-icon">🎯</div>
+                            <div>
+                                <div class="about-pillar-title">هم‌افزایی هنر و فناوری</div>
+                                <div class="about-pillar-desc">ترکیب دانش فنی عمیق با روایت‌گری تأثیرگذار فرهنگی</div>
+                            </div>
+                        </div>
+                        <div class="about-pillar-card">
+                            <div class="about-pillar-icon">🚀</div>
+                            <div>
+                                <div class="about-pillar-title">پیشگامی در رسانه نوین</div>
+                                <div class="about-pillar-desc">توسعه در مرزهای واقعیت مجازی، افزوده و هوش مصنوعی</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Section 3: Services & Activities -->
             <section id="sec-2">
-                <div class="section-content">
-                    <h2 class="section-title interactive-text" id="title-services">خدمات</h2>
+                <div class="section-content" style="max-width: 1250px;">
                     
-                    <div class="services-menu-layout">
-                        <!-- Right List (Menu) -->
-                        <div class="services-menu-list" id="servicesMenuList">
-                            
-                            <div class="services-menu-item active" id="s1-card"
-                                 data-title="واقعیت مجازی (VR)" 
-                                 data-desc="در سدیدار، ما محیط‌های واقعیت مجازی کاملاً سه‌بعدی و غوطه‌ورکننده طراحی می‌کنیم. از شبیه‌سازهای آموزشی دقیق گرفته تا تجربه‌های تعاملی و داستان‌گویی دیجیتال، ما دنیایی خلق می‌کنیم که کاربران در آن احساس حضور فیزیکی داشته باشند. استفاده از جدیدترین هدست‌ها و تکنیک‌های رندرینگ پیشرفته تضمین می‌کند که هر پروژه از بالاترین کیفیت بصری برخوردار باشد."
-                                 data-img="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1000&q=80">
-                                <span class="menu-item-icon" id="s1-icon">🥽</span>
-                                <span class="menu-item-title" id="s1-title">واقعیت مجازی (VR)</span>
-                                <span id="s1-subtitle" style="display:none;">طراحی محیط‌های غوطه‌ورکننده و تعاملی</span>
-                            </div>
+                    <div class="sec2-tabs-container">
+                        <div>
+                            <h2 class="section-title interactive-text" style="margin-bottom: 6px;">حوزه‌ها و خدمات</h2>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">توسعه محصولات دیجیتال، تجارب تعاملی و فناوری‌های غوطه‌ورکننده</p>
+                        </div>
 
-                            <div class="services-menu-item" id="s2-card"
-                                 data-title="واقعیت افزوده (AR)"
-                                 data-desc="خدمات واقعیت افزوده ما، محتوای دیجیتال (مدل‌های سه‌بعدی، ویدیوها و اطلاعات) را با محیط واقعی ترکیب می‌کند. ما اپلیکیشن‌هایی توسعه می‌دهیم که از طریق موبایل یا عینک‌های هوشمند، لایه‌ای از اطلاعات ارزشمند و سرگرم‌کننده را به دنیای پیرامون کاربر اضافه می‌کنند. این فناوری برای بازاریابی، آموزش و معرفی محصولات بسیار ایده‌آل است."
-                                 data-img="https://images.unsplash.com/photo-1617802690992-15d93263d3a9?auto=format&fit=crop&w=1000&q=80">
-                                <span class="menu-item-icon" id="s2-icon">📱</span>
-                                <span class="menu-item-title" id="s2-title">واقعیت افزوده (AR)</span>
-                                <span id="s2-subtitle" style="display:none;">ترکیب محتوای دیجیتال با دنیای واقعی</span>
-                            </div>
+                        <div class="sec2-tabs-nav" role="tablist">
+                            <button class="sec2-tab-btn active" id="tabBtnActivities" onclick="switchSec2Tab('activities')" role="tab" aria-selected="true">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                <span>حوزه‌های فعالیت</span>
+                            </button>
+                            <button class="sec2-tab-btn" id="tabBtnServices" onclick="switchSec2Tab('services')" role="tab" aria-selected="false">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                <span>خدمات قابل ارائه</span>
+                            </button>
+                        </div>
+                    </div>
 
-                            <div class="services-menu-item" id="s3-card"
-                                 data-title="بازی‌های ویدیویی و جدی"
-                                 data-desc="تیم ما در ساخت بازی‌های ویدیویی، تمرکز ویژه‌ای بر بازی‌های جدی (Serious Games) دارد. این بازی‌ها علاوه بر جنبه سرگرمی، برای آموزش مهارت‌های خاص، درمان، و شبیه‌سازی شرایط بحرانی طراحی می‌شوند. ما صفر تا صد گیم‌پلی، داستان، و مکانیک‌ها را بهینه‌سازی می‌کنیم."
-                                 data-img="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1000&q=80">
-                                <span class="menu-item-icon" id="s3-icon">🎮</span>
-                                <span class="menu-item-title" id="s3-title">بازی‌های ویدیویی</span>
-                                <span id="s3-subtitle" style="display:none;">توسعه بازی‌های آموزشی و سرگرمی</span>
+                    <!-- Panel 1: حوزه‌های فعالیت (2 rows of 4 = 8 items) -->
+                    <div id="panelActivities" class="activities-grid-4x2">
+                        <!-- Row 1 -->
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="4"></rect></svg>
                             </div>
+                            <div class="activity-mini-title">بازی‌های ویدیویی</div>
+                        </div>
 
-                            <div class="services-menu-item" id="s4-card"
-                                 data-title="طراحی VR & AR"
-                                 data-desc="طراحی تجربه کاربری (UX) و رابط کاربری (UI) برای محیط‌های سه‌بعدی و واقعیت ترکیبی، نیازمند دانش تخصصی است. ما با رعایت اصول ارگونومی، فضایی طراحی می‌کنیم که در آن کاربر بدون احساس خستگی یا سرگیجه، بتواند با منوها و اشیای سه‌بعدی تعامل داشته باشد."
-                                 data-img="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1000&q=80">
-                                <span class="menu-item-icon" id="s4-icon">📐</span>
-                                <span class="menu-item-title" id="s4-title">طراحی VR & AR</span>
-                                <span id="s4-subtitle" style="display:none;">توسعه کامل تجربه‌های سه‌بعدی</span>
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4l-2 2-2-2H4a2 2 0 0 1-2-2v-4z"></path><circle cx="7" cy="12" r="1.5"></circle><circle cx="17" cy="12" r="1.5"></circle></svg>
                             </div>
+                            <div class="activity-mini-title">واقعیت مجازی VR</div>
+                        </div>
 
-                            <div class="services-menu-item" id="s5-card"
-                                 data-title="ساخت پروتوتایپ"
-                                 data-desc="آیا ایده‌ای دارید اما از امکان‌سنجی فنی آن مطمئن نیستید؟ خدمات ساخت پروتوتایپ ما به شما کمک می‌کند تا ایده خود را در سریع‌ترین زمان ممکن و با کمترین هزینه به یک نسخه اولیه قابل بازی یا قابل تست تبدیل کنید. این مرحله برای جذب سرمایه و اعتبارسنجی ایده حیاتی است."
-                                 data-img="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80">
-                                <span class="menu-item-icon" id="s5-icon">⚙️</span>
-                                <span class="menu-item-title" id="s5-title">ساخت پروتوتایپ</span>
-                                <span id="s5-subtitle" style="display:none;">نمونه‌سازی سریع ایده‌های تعاملی</span>
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line><path d="M9 6h6"></path></svg>
                             </div>
+                            <div class="activity-mini-title">واقعیت افزوده AR</div>
+                        </div>
 
-                            <div class="services-menu-item" id="s6-card"
-                                 data-title="تولید بازی دیجیتال"
-                                 data-desc="از مرحله پیش‌تولید (نوشتن کانسپت و استوری‌بورد) تا تولید (مدل‌سازی، برنامه‌نویسی و انیمیشن) و انتشار نهایی، تیم سدیدار در کنار شماست. ما با استفاده از موتورهای بازی‌سازی قدرتمند مانند Unity و Unreal Engine محصولی استاندار و باکیفیت را تحویل می‌دهیم."
-                                 data-img="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80">
-                                <span class="menu-item-icon" id="s6-icon">🚀</span>
-                                <span class="menu-item-title" id="s6-title">تولید بازی دیجیتال</span>
-                                <span id="s6-subtitle" style="display:none;">از ایده تا پیاده‌سازی فنی</span>
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            </div>
+                            <div class="activity-mini-title">بازی‌های جدی و آموزشی</div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </div>
+                            <div class="activity-mini-title">تجربه‌های تعاملی و فرهنگی</div>
+                        </div>
+
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="5 6 12 3 19 6"></polyline><line x1="4" y1="10" x2="4" y2="21"></line><line x1="20" y1="10" x2="20" y2="21"></line><line x1="8" y1="14" x2="8" y2="17"></line><line x1="12" y1="14" x2="12" y2="17"></line><line x1="16" y1="14" x2="16" y2="17"></line></svg>
+                            </div>
+                            <div class="activity-mini-title">شبیه‌سازی مکان‌ها، رویدادها و روایت‌های تاریخی</div>
+                        </div>
+
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="12" y2="14"></line></svg>
+                            </div>
+                            <div class="activity-mini-title">تولید محتوای دیجیتال برای موزه‌ها، مدارس، نمایشگاه‌ها و سازمان‌ها</div>
+                        </div>
+
+                        <div class="activity-mini-card">
+                            <div class="activity-mini-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>
+                            </div>
+                            <div class="activity-mini-title">تولید ویدیوها و روایت‌های هوش مصنوعی</div>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2: خدمات قابل ارائه (6 cards in 3x2) -->
+                    <div id="panelServices" class="services-cards-grid" style="display: none;">
+                        <div class="service-box-card">
+                            <div class="service-box-header">
+                                <div class="service-box-icon">🥽</div>
+                                <div class="service-box-title">طراحی و توسعه تجربه VR</div>
+                            </div>
+                            <div class="service-box-desc">
+                                طراحی و پیاده‌سازی محیط‌های غوطه‌ورکننده سه‌بعدی و شبیه‌سازهای حرفه‌ای با جدیدترین هدست‌ها و بالاترین نرخ فریم و کیفیت بصری.
                             </div>
                         </div>
 
-                        <!-- Left Display (Content) -->
-                        <div class="services-menu-display">
-                            <div class="display-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=1000&q=80" alt="" id="smImg">
+                        <div class="service-box-card">
+                            <div class="service-box-header">
+                                <div class="service-box-icon">📱</div>
+                                <div class="service-box-title">طراحی و توسعه تجربه AR</div>
                             </div>
-                            <div class="display-content fade-in-content" id="smContentBlock">
-                                <div class="display-header">
-                                    <span id="smIcon">🥽</span>
-                                    <h3 id="smTitle">واقعیت مجازی (VR)</h3>
-                                </div>
-                                <h4 id="smSubtitle">طراحی محیط‌های غوطه‌ورکننده و تعاملی</h4>
-                                <p id="smDesc">در سدیدار، ما محیط‌های واقعیت مجازی کاملاً سه‌بعدی و غوطه‌ورکننده طراحی می‌کنیم. از شبیه‌سازهای آموزشی دقیق گرفته تا تجربه‌های تعاملی و داستان‌گویی دیجیتال، ما دنیایی خلق می‌کنیم که کاربران در آن احساس حضور فیزیکی داشته باشند. استفاده از جدیدترین هدست‌ها و تکنیک‌های رندرینگ پیشرفته تضمین می‌کند که هر پروژه از بالاترین کیفیت بصری برخوردار باشد.</p>
+                            <div class="service-box-desc">
+                                ترکیب محتوای دیجیتال سه‌بعدی با دنیای واقعی بر بستر موبایل و عینک‌های هوشمند برای آموزش، بازاریابی و موزه‌ها.
+                            </div>
+                        </div>
+
+                        <div class="service-box-card">
+                            <div class="service-box-header">
+                                <div class="service-box-icon">🎮</div>
+                                <div class="service-box-title">طراحی و تولید بازی دیجیتال</div>
+                            </div>
+                            <div class="service-box-desc">
+                                از پیش‌تولید (کانسپت، استوری‌بورد و گیم‌دیزاین) تا برنامه‌نویسی، مدل‌سازی و انتشار با موتورهای Unity و Unreal Engine.
+                            </div>
+                        </div>
+
+                        <div class="service-box-card">
+                            <div class="service-box-header">
+                                <div class="service-box-icon">⚙️</div>
+                                <div class="service-box-title">ساخت پروتوتایپ تعاملی</div>
+                            </div>
+                            <div class="service-box-desc">
+                                نمونه‌سازی سریع ایده‌ها به نسخه اولیه قابل تست جهت اعتبارسنجی ایده، بررسی امکان‌سنجی فنی و جذب سرمایه.
+                            </div>
+                        </div>
+
+                        <div class="service-box-card">
+                            <div class="service-box-header">
+                                <div class="service-box-icon">🎓</div>
+                                <div class="service-box-title">تولید تجربه آموزشی یا فرهنگی</div>
+                            </div>
+                            <div class="service-box-desc">
+                                انتقال مفاهیم عمیق تاریخی، تربیتی و مذهبی در قالب سرگرمی هدفمند و ماندگار برای مدارس، نهادها و مراکز فرهنگی.
+                            </div>
+                        </div>
+
+                        <div class="service-box-card">
+                            <div class="service-box-header">
+                                <div class="service-box-icon">💡</div>
+                                <div class="service-box-title">مشاوره و اجرای پروژه‌های فناوری تعاملی</div>
+                            </div>
+                            <div class="service-box-desc">
+                                هدایت استراتژیک، معماری سیستم و مدیریت فنی تا پیاده‌سازی و استقرار کامل راهکارهای نوین در سازمان‌ها.
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
-            <!-- Section 5: Projects -->
+            <!-- Section 4: Projects -->
             <section id="sec-3">
-                <div class="section-content">
-                    <h2 class="section-title interactive-text" id="title-projects">تجربه‌های منتخب</h2>
-                    <div class="projects-creative-wrapper" id="grid-projects">
-                        
-                        <div class="project-creative-card offset-up">
-                            <div class="project-img-wrapper">
-                                <img id="p1-img" src="https://images.unsplash.com/photo-1617802690992-15d93263d3a9?auto=format&fit=crop&w=500&q=80" alt="Historical Simulation" />
-                            </div>
-                            <div class="project-info-box">
-                                <div class="project-badge-tag" id="p1-tag">VR / تاریخی</div>
-                                <h3 id="p1-title">شبیه‌سازی تاریخی</h3>
-                                <div class="project-info-row">
-                                    <strong>نقش تیم:</strong>
-                                    <span id="p1-role">طراحی و توسعه کامل</span>
-                                </div>
-                                <div class="project-info-row">
-                                    <strong>دستاورد:</strong>
-                                    <span id="p1-achieve">کسب جایزه بهترین تجربه VR</span>
-                                </div>
-                            </div>
+                <div class="section-content" style="max-width: 1300px;">
+                    
+                    <div class="projects-showcase-header">
+                        <div>
+                            <h2 class="section-title interactive-text" style="margin-bottom: 4px;">تجربه‌های منتخب اعضای تیم</h2>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">گزیده‌ای از پروژه‌های برجسته، افتخارات و دستاوردهای اعضای استودیو سدیدار</p>
                         </div>
 
-                        <div class="project-creative-card offset-down">
-                            <div class="project-img-wrapper">
-                                <img id="p2-img" src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=500&q=80" alt="Educational Game" />
+                        <div class="projects-header-actions" style="display: flex; align-items: center; gap: 18px;">
+                            <div class="projects-filter-bar">
+                                <button class="project-filter-btn active" onclick="filterProjects('all', this)">همه (۱۰)</button>
+                                <button class="project-filter-btn" onclick="filterProjects('ar', this)">واقعیت افزوده AR</button>
+                                <button class="project-filter-btn" onclick="filterProjects('vr', this)">واقعیت مجازی VR</button>
+                                <button class="project-filter-btn" onclick="filterProjects('ai', this)">هوش مصنوعی و انیمیشن</button>
                             </div>
-                            <div class="project-info-box">
-                                <div class="project-badge-tag gold" id="p2-tag">آموزشی</div>
-                                <h3 id="p2-title">بازی جدی فرهنگی</h3>
-                                <div class="project-info-row">
-                                    <strong>نقش تیم:</strong>
-                                    <span id="p2-role">تولید محتوا و گیم‌دیزاین</span>
-                                </div>
-                                <div class="project-info-row">
-                                    <strong>دستاورد:</strong>
-                                    <span id="p2-achieve">استفاده در ۱۰ مرکز آموزشی</span>
-                                </div>
+                            
+                            <div class="carousel-arrows">
+                                <button class="carousel-arrow-btn" onclick="scrollProjects(1)" title="قبلی">&#8594;</button>
+                                <button class="carousel-arrow-btn" onclick="scrollProjects(-1)" title="بعدی">&#8592;</button>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="projects-carousel-container">
+                        <div class="projects-scroll-track" id="projectsTrack">
+                            
+                            <!-- Project 1: Mepel -->
+                            <div class="project-modern-card" data-category="ar">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/project_mepel_ar_1790779265402.jpg" alt="پروژه واقعیت افزوده Mepel" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge">واقعیت افزوده AR</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Mepel</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>بازی واقعیت افزوده</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>مدیریت پروژه، ایده پردازی، توسعه فنی</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>کسب رتبه اول بخش بازی و سرگرمی مسابقه بین المللی XR Design Challenge | کسب رتبه‌ی سوم جشنواره ملی بازی‌های AR/VR</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 2: الفباشی -->
+                            <div class="project-modern-card" data-category="ar">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/project_alefbashi_edu_1790779279075.jpg" alt="پروژه الفباشی بازی آموزشی واقعیت افزوده" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge gold">بازی آموزشی AR</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">الفباشی</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>بازی آموزشی واقعیت افزوده</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>مدیریت پروژه، ایده پردازی، طراحی بازی، توسعه فنی</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>کسب رتبه اول جشنواره بین المللی بازی‌های جدی سال 1402</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 3: Cells -->
+                            <div class="project-modern-card" data-category="ai">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/project_ai_film_1790779302123.jpg" alt="انیمیشن هوش مصنوعی Cells" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge purple">انیمیشن هوش مصنوعی</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Cells</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>انیمیشن هوش مصنوعی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی و تولید محتوا</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>برگزیده در 7 فستیوال بین‌المللی</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 4: Restart -->
+                            <div class="project-modern-card" data-category="ai">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/spiritual_metaverse_1789141593694.jpg" alt="انیمیشن هوش مصنوعی Restart" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge purple">انیمیشن هوش مصنوعی</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">Restart</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>انیمیشن هوش مصنوعی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی و تولید محتوای هوش مصنوعی</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>برگزیده‌ی 9 جشنواره بین‌المللی</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 5: قاصدک -->
+                            <div class="project-modern-card" data-category="ai">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/project_ai_film_1790779302123.jpg" alt="انیمیشن قاصدک" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge purple">انیمیشن هوش مصنوعی</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">قاصدک</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>انیمیشن هوش مصنوعی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی، موسیقی و تولید محتوای هوش مصنوعی</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>برگزیده‌ی 5 جشنواره بین‌المللی و رتبه‌ی نخست جشنواره کشوری</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 6: وعده محقق -->
+                            <div class="project-modern-card" data-category="ai">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/spiritual_metaverse_1789141593694.jpg" alt="فیلم کوتاه هوش مصنوعی وعده محقق" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge purple">فیلم کوتاه هوش مصنوعی</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">وعده محقق</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>فیلم کوتاه هوش مصنوعی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی و تولید محتوای هوش مصنوعی</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>رتبه اول جشنواره ملی بسیج، رتبه دوم جشنواره کشوری معروف</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 7: رقیه خاتون -->
+                            <div class="project-modern-card" data-category="vr">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/project_vr_sanctuary_1790779293365.jpg" alt="تجربه واقعیت مجازی رقیه خاتون" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge">واقعیت مجازی VR</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">رقیه خاتون</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>تجربه‌ی واقعیت مجازی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی، مدلسازی سه بعدی، توسعه فنی VR</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>همکاری با عتبه عباسیه، شبکه الکفیل و دانشگاه العبید</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 8: برگ -->
+                            <div class="project-modern-card" data-category="vr">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/project_vr_sanctuary_1790779293365.jpg" alt="تجربه واقعیت مجازی برگ" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge">واقعیت مجازی VR</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">برگ</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>تجربه‌ی واقعیت مجازی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی، مدلسازی سه بعدی، توسعه فنی VR</span>
+                                    </div>
+                                    <div class="project-card-row achieve-row">
+                                        <strong style="color: var(--accent-gold);">دستاورد یا نتیجه:</strong>
+                                        <span>پیاده سازی مفاهیم قرآنی با تکنولوژی VR</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 9: اَسماءُ الحُسنا (بدون فیلد دستاورد طبق دستور کاربر) -->
+                            <div class="project-modern-card" data-category="vr">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/minimal_vr_headset_1789142033394.jpg" alt="بازی واقعیت مجازی اسماء الحسنی" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge">بازی واقعیت مجازی VR</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">اَسماءُ الحُسنا</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>بازی واقعیت مجازی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی، گیم دیزاین، مدلسازی سه بعدی، توسعه فنی VR</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project 10: زیارت -->
+                            <div class="project-modern-card" data-category="vr">
+                                <div class="project-card-media">
+                                    <img src="/src/assets/images/project_vr_sanctuary_1790779293365.jpg" alt="تجربه واقعیت مجازی زیارت" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <div class="project-card-badge">تجربه واقعیت مجازی VR</div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-card-title">زیارت</h3>
+                                    <div class="project-card-row">
+                                        <strong>نوع پروژه:</strong>
+                                        <span>تجربه‌ی واقعیت مجازی</span>
+                                    </div>
+                                    <div class="project-card-row">
+                                        <strong>نقش درپروژه:</strong>
+                                        <span>کارگردانی، مدلسازی سه بعدی، توسعه فنی VR</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 4: Team -->
+            <!-- Section 5: Team -->
             <section id="sec-4">
                 <div class="section-content">
-                    <h2 class="section-title interactive-text" id="title-team">تیم ما</h2>
+                    <h2 class="section-title interactive-text" id="title-team">معرفی اعضای تیم</h2>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">متخصصان، هنرمندان و پژوهشگران استودیو سدیدار</p>
+                    
                     <div class="team-holo-grid" id="grid-team">
-                        <!-- Member 1 -->
-                        <a href="#" id="t1-link" target="_blank" class="team-holo-card">
+                        <!-- Member 1: ریحانه مختاری -->
+                        <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <img src="images/t.reyhane.jpg" alt="ریحانه مختاری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_reyhane_mokhtari_1790779970068.jpg';" />
                             <div class="team-holo-overlay">
-                                <h3 id="t1-name" class="team-holo-name interactive-text">سیده مریم طباطبایی</h3>
-                                <p id="t1-role" class="team-holo-role">مدیر و توسعه دهنده</p>
+                                <h3 class="team-holo-name interactive-text">ریحانه مختاری</h3>
+                                <p class="team-holo-role" style="color: var(--accent-teal);">کارشناس مارکتینگ دیجیتال</p>
+                                <div class="team-expertise-box">
+                                    استراتژی دیجیتال مارکتینگ، تحلیل رفتار مخاطب و مدیریت ارتباطات برند
+                                </div>
                             </div>
-                        </a>
-                        <!-- Member 2 -->
-                        <a href="#" id="t2-link" target="_blank" class="team-holo-card">
+                        </div>
+
+                        <!-- Member 2: عبدالکریم منصوری -->
+                        <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <img src="images/t.mansouri.jpg" alt="عبدالکریم منصوری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_karim_mansouri_1790779983414.jpg';" />
                             <div class="team-holo-overlay">
-                                <h3 id="t2-name" class="team-holo-name interactive-text">کریم منصوری</h3>
-                                <p id="t2-role" class="team-holo-role">کارگردان</p>
+                                <h3 class="team-holo-name interactive-text">عبدالکریم منصوری</h3>
+                                <p class="team-holo-role" style="color: var(--accent-teal);">مدیر تولید و کارگردان</p>
+                                <div class="team-expertise-box">
+                                    کارگردانی چندرسانه‌ای، مدیریت تولید هنری و روایت‌پردازی تعاملی
+                                </div>
                             </div>
-                        </a>
-                        <!-- Member 3 -->
-                        <a href="#" id="t3-link" target="_blank" class="team-holo-card">
+                        </div>
+
+                        <!-- Member 3: سیده مریم طباطبایی -->
+                        <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <img src="images/t.tabatabaei.jpg" alt="سیده مریم طباطبایی" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_maryam_tabatabaei_1790780013997.jpg';" />
                             <div class="team-holo-overlay">
-                                <h3 id="t3-name" class="team-holo-name interactive-text">ریحانه مختاری</h3>
-                                <p id="t3-role" class="team-holo-role">کارشناس فضای مجازی</p>
+                                <h3 class="team-holo-name interactive-text">سیده مریم طباطبایی</h3>
+                                <p class="team-holo-role" style="color: var(--accent-gold);">مدیر مجموعه و رهبر فنی</p>
+                                <div class="team-expertise-box">
+                                    معماری سیستم‌های تعاملی XR، مدیریت راهبردی و هدایت تیم‌های فنی
+                                </div>
                             </div>
-                        </a>
-                        <!-- Member 4 -->
-                        <a href="#" id="t4-link" target="_blank" class="team-holo-card">
+                        </div>
+
+                        <!-- Member 4: علیرضا روحیان -->
+                        <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <img src="images/t.rouhian.jpg" alt="علیرضا روحیان" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_alireza_rouhian_1790780031182.jpg';" />
                             <div class="team-holo-overlay">
-                                <h3 id="t4-name" class="team-holo-name interactive-text">علیرضا روحیان</h3>
-                                <p id="t4-role" class="team-holo-role">طراح سه بعدی</p>
+                                <h3 class="team-holo-name interactive-text">علیرضا روحیان</h3>
+                                <p class="team-holo-role" style="color: var(--accent-teal);">طراح ارشد سه‌بعدی و Technical Artist</p>
+                                <div class="team-expertise-box">
+                                    مدلسازی تخصصی سه‌بعدی، شیدرسازی و رندرینگ بلادرنگ موتورهای بازی
+                                </div>
                             </div>
-                        </a>
-                        <!-- Member 5 -->
-                        <a href="#" id="t5-link" target="_blank" class="team-holo-card">
+                        </div>
+
+                        <!-- Member 5: سید محمد فخری -->
+                        <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=400&q=80" alt="Team Member" class="team-holo-image" />
+                            <img src="images/t.fakhri.jpg" alt="سید محمد فخری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_mohammad_fakhri_1790780044662.jpg';" />
                             <div class="team-holo-overlay">
-                                <h3 id="t5-name" class="team-holo-name interactive-text">سید محمد فخری</h3>
-                                <p id="t5-role" class="team-holo-role">سرپرست تحقیق و توسعه</p>
+                                <h3 class="team-holo-name interactive-text">سید محمد فخری</h3>
+                                <p class="team-holo-role" style="color: var(--accent-teal);">کارشناس تحقیق و توسعه</p>
+                                <div class="team-expertise-box">
+                                    پژوهش الگوریتم‌های نوظهور، هوش مصنوعی مولد و توسعه تجارب نوین
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section 6: Contact -->
             <section id="sec-5">
-                <div class="section-content">
+                <div class="section-content" style="max-width: 1050px;">
                     <h2 class="section-title interactive-text" id="title-contact">تماس با ما</h2>
-                    <form class="contact-form" onsubmit="event.preventDefault();">
-                        <div class="form-group"><input type="text" placeholder="نام و نام خانوادگی"></div>
-                        <div class="form-group"><input type="email" placeholder="ایمیل یا شماره تماس"></div>
-                        <div class="form-group full"><textarea rows="4" placeholder="پیام شما"></textarea></div>
-                        <button class="btn-submit" type="submit">ارسال پیام</button>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">برای سفارش پروژه، مشاوره تخصصی یا آغاز همکاری با ما در ارتباط باشید</p>
+                    
+                    <!-- Direct Contact Channels -->
+                    <div class="contact-methods-grid">
+                        <a href="mailto:SadidarStudio@gmail.com" class="contact-channel-card">
+                            <div class="contact-channel-icon">✉️</div>
+                            <div class="contact-channel-info">
+                                <h4>پست الکترونیکی</h4>
+                                <p>SadidarStudio@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="tel:09026803714" class="contact-channel-card">
+                            <div class="contact-channel-icon">📞</div>
+                            <div class="contact-channel-info">
+                                <h4>شماره تماس مستقیم</h4>
+                                <p>09026803714</p>
+                            </div>
+                        </a>
+
+                        <a href="https://instagram.com/SadidarStudio" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+                            <div class="contact-channel-icon">📷</div>
+                            <div class="contact-channel-info">
+                                <h4>صفحه اینستاگرام</h4>
+                                <p>@SadidarStudio</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="نام و نام خانوادگی شما" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactInfo" placeholder="شماره تماس یا ایمیل" required>
+                        </div>
+                        <div class="form-group full">
+                            <textarea id="contactMsg" rows="4" placeholder="توضیحات پروژه یا پیام شما برای تیم سدیدار..." required></textarea>
+                        </div>
+                        <button class="btn-submit" type="submit" id="btnSubmitContact">
+                            <span>ارسال پیام</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
                     </form>
+
+                    <div class="contact-feedback-toast" id="contactSuccessToast">
+                        ✨ پیام شما با موفقیت ثبت شد. همکاران ما در استودیو سدیدار در اسرع وقت با شما تماس خواهند گرفت.
+                    </div>
                 </div>
             </section>
 
@@ -1275,6 +3030,11 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button for Mobile / Tablet -->
+    <button id="btnBackToTop" class="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="بازگشت به بالای صفحه">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
     <script>
         let currentSlide = 0;
         const totalSlides = 6;
@@ -1283,6 +3043,28 @@
         const navLinks = document.querySelectorAll('.nav-link');
         
         let isAnimating = false;
+
+        // Mobile drawer handlers
+        window.toggleMobileNav = function(open) {
+            const drawer = document.getElementById('mobileNavDrawer');
+            const btn = document.getElementById('mobileMenuBtn');
+            if (!drawer) return;
+            const isOpen = open !== undefined ? open : !drawer.classList.contains('open');
+            drawer.classList.toggle('open', isOpen);
+            if (btn) {
+                const openIcon = btn.querySelector('.icon-menu-open');
+                const closeIcon = btn.querySelector('.icon-menu-close');
+                if (openIcon) openIcon.style.display = isOpen ? 'none' : 'block';
+                if (closeIcon) closeIcon.style.display = isOpen ? 'block' : 'none';
+                btn.setAttribute('aria-expanded', isOpen);
+            }
+            document.body.style.overflow = (isOpen && window.innerWidth <= 1024) ? 'hidden' : '';
+        };
+
+        window.handleMobileNavClick = function(index) {
+            toggleMobileNav(false);
+            goToSlide(index);
+        };
 
         // --- Smooth Inertia Scroll Logic ---
         let currentTranslateX = 0;
@@ -1311,7 +3093,7 @@
                 fill.style.width = `${percentage}%`;
             }
 
-            // آپدیت لینک‌ها (چون ترتیب لینک‌های هدر برعکس شده)
+            // آپدیت لینک‌های هدر دسکتاپ
             navLinks.forEach(link => {
                 const targetId = link.getAttribute('id');
                 if (targetId === `nav-${currentSlide}`) {
@@ -1320,6 +3102,15 @@
                     link.classList.remove('active');
                 }
             });
+
+            // آپدیت لینک‌های منوی موبایل
+            for (let i = 0; i < totalSlides; i++) {
+                const mLink = document.getElementById(`m-nav-${i}`);
+                if (mLink) {
+                    if (i === currentSlide) mLink.classList.add('active');
+                    else mLink.classList.remove('active');
+                }
+            }
 
             const timelineNodes = document.querySelectorAll('.timeline-node');
             timelineNodes.forEach((node, idx) => {
@@ -1331,8 +3122,58 @@
             if (index >= 0 && index < totalSlides) {
                 currentSlide = index;
                 updateUI();
+                if (window.innerWidth <= 1024) {
+                    const targetSec = document.getElementById('sec-' + index);
+                    if (targetSec) {
+                        const headerOffset = 75;
+                        const elementPosition = targetSec.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
             }
         }
+
+        // On mobile & tablet, sync vertical scroll with active navigation indicators
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -60% 0px',
+                threshold: 0
+            };
+            const sectionObserver = new IntersectionObserver((entries) => {
+                if (window.innerWidth > 1024) return;
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        const slideNum = parseInt(id.replace('sec-', ''), 10);
+                        if (!isNaN(slideNum) && currentSlide !== slideNum) {
+                            currentSlide = slideNum;
+                            updateUI();
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            for (let i = 0; i < totalSlides; i++) {
+                const sec = document.getElementById('sec-' + i);
+                if (sec) sectionObserver.observe(sec);
+            }
+        }
+
+        // Back to top visibility listener
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('btnBackToTop');
+            if (!btn) return;
+            if (window.scrollY > 350 && window.innerWidth <= 1024) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        }, { passive: true });
 
         function nextSlide() {
             if (currentSlide < totalSlides - 1) {
@@ -1593,212 +3434,114 @@
         }
         initCursorHovers();
 
-// --- Services Menu Logic ---
-        const serviceMenuItems = document.querySelectorAll('.services-menu-item');
-        const smImg = document.getElementById('smImg');
-        const smTitle = document.getElementById('smTitle');
-        const smDesc = document.getElementById('smDesc');
-        const smSubtitle = document.getElementById('smSubtitle');
-        const smIcon = document.getElementById('smIcon');
-        const smContentBlock = document.getElementById('smContentBlock');
+        // --- Sec 2 Tab Switcher (Activities vs Services) ---
+        window.switchSec2Tab = function(tabName) {
+            const panelActivities = document.getElementById('panelActivities');
+            const panelServices = document.getElementById('panelServices');
+            const btnActivities = document.getElementById('tabBtnActivities');
+            const btnServices = document.getElementById('tabBtnServices');
 
-        serviceMenuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Remove active from all
-                serviceMenuItems.forEach(el => el.classList.remove('active'));
-                // Add active to clicked
-                item.classList.add('active');
+            if (tabName === 'activities') {
+                if (panelActivities) panelActivities.style.display = 'grid';
+                if (panelServices) panelServices.style.display = 'none';
+                if (btnActivities) {
+                    btnActivities.classList.add('active');
+                    btnActivities.setAttribute('aria-selected', 'true');
+                }
+                if (btnServices) {
+                    btnServices.classList.remove('active');
+                    btnServices.setAttribute('aria-selected', 'false');
+                }
+            } else {
+                if (panelActivities) panelActivities.style.display = 'none';
+                if (panelServices) panelServices.style.display = 'grid';
+                if (btnActivities) {
+                    btnActivities.classList.remove('active');
+                    btnActivities.setAttribute('aria-selected', 'false');
+                }
+                if (btnServices) {
+                    btnServices.classList.add('active');
+                    btnServices.setAttribute('aria-selected', 'true');
+                }
+            }
+        };
 
-                // Re-trigger animation
-                smContentBlock.classList.remove('fade-in-content');
-                void smContentBlock.offsetWidth; // trigger reflow
-                smContentBlock.classList.add('fade-in-content');
+        // --- Projects Filter ---
+        window.filterProjects = function(category, btnElement) {
+            const filterBtns = document.querySelectorAll('.project-filter-btn');
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
 
-                // Update content
-                smImg.src = item.dataset.img;
-                smTitle.textContent = item.dataset.title;
-                smDesc.textContent = item.dataset.desc;
-                
-                // Extract subtitle and icon from children
-                const iconText = item.querySelector('.menu-item-icon').textContent;
-                const subtitleText = item.querySelector('[id$="-subtitle"]').textContent;
-                
-                smIcon.textContent = iconText;
-                smSubtitle.textContent = subtitleText;
+            const projectCards = document.querySelectorAll('.project-modern-card');
+            projectCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
             });
-        });
 
-        modalClose.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-        
-        modal.addEventListener('click', (e) => {
-            if(e.target === modal) {
-                modal.classList.remove('active');
+            const track = document.getElementById('projectsTrack');
+            if (track) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
             }
-        });
+        };
 
-
-        </script>
-<script type="module" src="data-loader.js">        // --- Tech Particle Background ---
-        const canvas = document.getElementById('tech-canvas');
-        const ctx = canvas.getContext('2d');
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-        let particles = [];
-        let mouseX = -1000;
-        let mouseY = -1000;
-        
-        
-        const NUM_PARTICLES = 160;
-        class Particle {
-            constructor(index) {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.baseVx = (Math.random() - 0.5) * 0.4;
-                this.baseVy = (Math.random() - 0.5) * 0.4;
-                this.vx = this.baseVx;
-                this.vy = this.baseVy;
-                this.size = Math.random() * 1.5 + 0.8;
-
-                // Virtual Islamic Architecture Geometry (Rub el Hizb 8-pointed star & Dome Arch)
-                let angle = (index / NUM_PARTICLES) * Math.PI * 2;
-                let radiusBase = Math.min(width, height) * 0.38;
-                
-                let cos1 = Math.abs(Math.cos(angle));
-                let sin1 = Math.abs(Math.sin(angle));
-                let cos2 = Math.abs(Math.cos(angle - Math.PI/4));
-                let sin2 = Math.abs(Math.sin(angle - Math.PI/4));
-                
-                let r1 = 1 / Math.max(cos1, sin1);
-                let r2 = 1 / Math.max(cos2, sin2);
-                let r = radiusBase * 0.8 * Math.max(r1, r2); // The 8-pointed star equation
-                
-                if (index % 5 === 0) r = radiusBase * 1.1; // Outer bounding cosmic circle
-                else if (index % 5 === 1) r = radiusBase * 0.3; // Inner core circle
-                else if (index % 5 === 2) {
-                    // Dome / Arch parametric shape
-                    let t = (index / NUM_PARTICLES) * Math.PI;
-                    this.txBase = width/2 + Math.cos(t) * radiusBase * 1.8;
-                    this.tyBase = height/2 - Math.abs(Math.sin(t)) * radiusBase * 1.5 + radiusBase * 0.8;
-                    this.isDome = true;
-                }
-
-                if(!this.isDome) {
-                    this.txBase = width/2 + r * Math.cos(angle);
-                    this.tyBase = height/2 + r * Math.sin(angle);
-                }
-                
-                this.angleOffset = angle;
-                this.floatRadius = Math.random() * 20 + 5;
+        // --- Projects Horizontal Scroll Arrow Buttons ---
+        window.scrollProjects = function(direction) {
+            const track = document.getElementById('projectsTrack');
+            if (track) {
+                const scrollAmount = 370 * direction;
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             }
-            update() {
-                // Interactive mouse repulsion (Magnetic force)
-                const dxMouse = this.x - mouseX;
-                const dyMouse = this.y - mouseY;
-                const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-                const interactionRadius = 200;
+        };
 
-                if (distMouse < interactionRadius) {
-                    const force = (interactionRadius - distMouse) / interactionRadius;
-                    this.vx += (dxMouse / distMouse) * force * 2.5; // push away strongly
-                    this.vy += (dyMouse / distMouse) * force * 2.5;
-                }
-
-                // Morphing force towards the Matrix Structure
-                let time = Date.now() * 0.0003;
-                let targetX = this.txBase;
-                let targetY = this.tyBase;
-                
-                if(!this.isDome) {
-                    let cx = width/2, cy = height/2;
-                    // Slow rotation of the geometric mandala
-                    targetX = cx + (this.txBase - cx) * Math.cos(time*0.2) - (this.tyBase - cy) * Math.sin(time*0.2);
-                    targetY = cy + (this.txBase - cx) * Math.sin(time*0.2) + (this.tyBase - cy) * Math.cos(time*0.2);
-                }
-
-                // Micro floating for holographic/virtual vibe
-                targetX += Math.cos(time * 3 + this.angleOffset) * this.floatRadius;
-                targetY += Math.sin(time * 3 + this.angleOffset) * this.floatRadius;
-
-                // Move towards calculated target (spring physics)
-                const dxTarget = targetX - this.x;
-                const dyTarget = targetY - this.y;
-                
-                this.vx += dxTarget * 0.004;
-                this.vy += dyTarget * 0.004;
-
-                // Friction / Damping
-                this.vx *= 0.88;
-                this.vy *= 0.88;
-
-                this.x += this.vx;
-                this.y += this.vy;
+        // --- Contact Form Submission ---
+        window.handleContactSubmit = function(e) {
+            e.preventDefault();
+            const toast = document.getElementById('contactSuccessToast');
+            const btn = document.getElementById('btnSubmitContact');
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<span>در حال ارسال...</span>';
             }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(33, 185, 198, 0.8)';
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = 'rgba(33, 185, 198, 0.5)';
-                ctx.fill();
-                ctx.shadowBlur = 0; // reset for lines
-            }
-        }
-        for(let i=0; i<NUM_PARTICLES; i++) particles.push(new Particle(i));
-
-        
-        function animateTech() {
-            ctx.clearRect(0, 0, width, height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            for(let i=0; i<particles.length; i++) {
-                for(let j=i+1; j<particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
-                    if(dist < 150) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(33, 185, 198, ${0.15 - dist/1000})`;
-                        ctx.stroke();
-                    }
+            setTimeout(() => {
+                if (toast) {
+                    toast.style.display = 'block';
                 }
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = '<span>پیام ارسال شد ✓</span>';
+                }
+                const form = document.getElementById('contactForm');
+                if (form) form.reset();
+                setTimeout(() => {
+                    if (toast) toast.style.display = 'none';
+                    if (btn) btn.innerHTML = '<span>ارسال پیام</span>';
+                }, 5000);
+            }, 500);
+        };
+
+        // Touch swipe support for horizontal slide navigation
+        let touchStartX = 0;
+        let touchStartY = 0;
+        window.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        window.addEventListener('touchend', (e) => {
+            if (window.innerWidth <= 1024) return;
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 60) {
+                if (diffX < 0) nextSlide();
+                else prevSlide();
             }
-            requestAnimationFrame(animateTech);
-        }
-        animateTech();
-
-        // --- Smoke Parallax & Mouse Move ---
-        document.addEventListener('mousemove', (e) => {
-            // Update particle mouse pos
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            // Smoke Parallax
-            const x = (e.clientX / window.innerWidth - 0.5) * 80; // offset amount
-            const y = (e.clientY / window.innerHeight - 0.5) * 50;
-            
-            const s1 = document.getElementById('smoke-layer-1');
-            const s2 = document.getElementById('smoke-layer-2');
-            
-            if(s1) s1.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
-            if(s2) s2.style.transform = `translate(${-x * 0.6}px, ${y * 0.6}px) scale(1.15)`;
-        });
-        
-        document.addEventListener('mouseleave', () => {
-            mouseX = -1000;
-            mouseY = -1000;
-        });
-        
-        window.addEventListener('resize', () => {
-            updateUI();
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        });
-
-    </script></body>
+        }, { passive: true });
+    </script>
+    <script type="module" src="data-loader.js"></script>
+</body>
 </html>
