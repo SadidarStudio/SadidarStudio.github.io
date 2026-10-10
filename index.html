@@ -736,7 +736,7 @@
         .hero-3d-left {
             width: 270px;
             height: 360px;
-            background-image: url('/src/assets/images/project_mepel_ar_1790779265402.jpg');
+            background-image: url('images/site/hero-left.webp');
             transform: rotateY(25deg) scale(0.85);
             opacity: 0.75;
         }
@@ -744,7 +744,7 @@
         .hero-3d-right {
             width: 270px;
             height: 360px;
-            background-image: url('/src/assets/images/project_vr_sanctuary_1790779293365.jpg');
+            background-image: url('images/site/hero-right.webp');
             transform: rotateY(-25deg) scale(0.85);
             opacity: 0.75;
         }
@@ -752,7 +752,7 @@
         .hero-3d-center {
             width: 360px;
             height: 460px;
-            background-image: url('/src/assets/images/minimal_vr_headset_1789142033394.jpg');
+            background-image: url('images/site/hero-center.webp');
             transform: translateZ(50px);
             border-radius: 20px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(33, 185, 198, 0.4);
@@ -2274,6 +2274,33 @@
             line-height: 1.8;
             margin-bottom: 0;
         }
+/* image cards (activities/services) */
+.activity-mini-img{display:none}
+.service-box-img{width:calc(100% + 44px);margin:-24px -22px 4px;height:170px;object-fit:cover;border-radius:18px 18px 0 0;display:block}
+.service-box-card{overflow:hidden}
+@media (max-width:1023px){
+ .activity-mini-img{display:block;width:56px;height:56px;object-fit:cover;border-radius:10px;flex-shrink:0}
+ .activity-mini-card .activity-mini-icon{display:none}
+}
+@media (min-width:1024px){
+ #panelActivities.activities-grid-4x2{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+ #panelActivities .activity-mini-card{flex-direction:column;align-items:stretch;padding:0;min-height:0;border-radius:16px;background:rgba(8,16,28,.85)}
+ #panelActivities .activity-mini-img{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;transition:transform .4s}
+ #panelActivities .activity-mini-card:hover .activity-mini-img{transform:scale(1.05)}
+ #panelActivities .activity-mini-icon{display:none}
+ #panelActivities .activity-mini-title{padding:10px 14px 12px;font-size:.98rem;position:relative;background:linear-gradient(0deg,rgba(8,16,28,.95),rgba(8,16,28,.75));margin-top:-1px}
+ #panelActivities .activity-mini-title::after{content:'←';display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid rgba(33,185,198,.4);border-radius:50%;font-size:.8rem;color:var(--accent-teal);float:left;margin-top:-2px}
+ #panelServices.services-cards-grid{grid-template-columns:repeat(3,1fr);gap:18px;max-width:1080px;margin-inline:auto;box-sizing:border-box}
+ #panelActivities.activities-grid-4x2{max-width:1080px;margin-inline:auto}
+ #panelServices .service-box-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.85rem}
+ #panelServices .service-box-header{margin-top:-24px!important}
+ #panelServices .service-box-card{padding:0 0 22px;gap:10px}
+ #panelServices .service-box-img{width:100%;margin:0;height:150px;border-radius:18px 18px 0 0;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+ #panelServices .service-box-header{padding:0 22px;margin-top:-34px;position:relative}
+ #panelServices .service-box-title{font-size:1.15rem}
+ #panelServices .service-box-desc{padding:0 22px;text-align:center}
+}
+
 </style>
 </head>
 <body>
@@ -2496,28 +2523,28 @@
                     <!-- Panel 1: حوزه‌های فعالیت (2 rows of 4 = 8 items) -->
                     <div id="panelActivities" class="activities-grid-4x2">
                         <!-- Row 1 -->
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-video-games.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="4"></rect></svg>
                             </div>
                             <div class="activity-mini-title">بازی‌های ویدیویی</div>
                         </div>
 
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-vr.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4l-2 2-2-2H4a2 2 0 0 1-2-2v-4z"></path><circle cx="7" cy="12" r="1.5"></circle><circle cx="17" cy="12" r="1.5"></circle></svg>
                             </div>
                             <div class="activity-mini-title">واقعیت مجازی VR</div>
                         </div>
 
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-ar.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line><path d="M9 6h6"></path></svg>
                             </div>
                             <div class="activity-mini-title">واقعیت افزوده AR</div>
                         </div>
 
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-serious-games.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                             </div>
@@ -2525,28 +2552,28 @@
                         </div>
 
                         <!-- Row 2 -->
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-interactive-cultural.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                             </div>
                             <div class="activity-mini-title">تجربه‌های تعاملی و فرهنگی</div>
                         </div>
 
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-historical.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="5 6 12 3 19 6"></polyline><line x1="4" y1="10" x2="4" y2="21"></line><line x1="20" y1="10" x2="20" y2="21"></line><line x1="8" y1="14" x2="8" y2="17"></line><line x1="12" y1="14" x2="12" y2="17"></line><line x1="16" y1="14" x2="16" y2="17"></line></svg>
                             </div>
                             <div class="activity-mini-title">شبیه‌سازی مکان‌ها، رویدادها و روایت‌های تاریخی</div>
                         </div>
 
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-museum.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="12" y2="14"></line></svg>
                             </div>
                             <div class="activity-mini-title">تولید محتوای دیجیتال برای موزه‌ها، مدارس، نمایشگاه‌ها و سازمان‌ها</div>
                         </div>
 
-                        <div class="activity-mini-card">
+                        <div class="activity-mini-card"><img class="activity-mini-img" src="images/site/activity-ai-video.webp" alt="" loading="lazy" decoding="async">
                             <div class="activity-mini-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>
                             </div>
@@ -2556,9 +2583,8 @@
 
                     <!-- Panel 2: خدمات قابل ارائه (6 cards in 3x2) -->
                     <div id="panelServices" class="services-cards-grid" style="display: none;">
-                        <div class="service-box-card">
+                        <div class="service-box-card"><img class="service-box-img" src="images/site/service-vr.webp" alt="" loading="lazy" decoding="async">
                             <div class="service-box-header">
-                                <div class="service-box-icon">🥽</div>
                                 <div class="service-box-title">طراحی و توسعه تجربه VR</div>
                             </div>
                             <div class="service-box-desc">
@@ -2566,9 +2592,8 @@
                             </div>
                         </div>
 
-                        <div class="service-box-card">
+                        <div class="service-box-card"><img class="service-box-img" src="images/site/service-ar.webp" alt="" loading="lazy" decoding="async">
                             <div class="service-box-header">
-                                <div class="service-box-icon">📱</div>
                                 <div class="service-box-title">طراحی و توسعه تجربه AR</div>
                             </div>
                             <div class="service-box-desc">
@@ -2576,9 +2601,8 @@
                             </div>
                         </div>
 
-                        <div class="service-box-card">
+                        <div class="service-box-card"><img class="service-box-img" src="images/site/service-game.webp" alt="" loading="lazy" decoding="async">
                             <div class="service-box-header">
-                                <div class="service-box-icon">🎮</div>
                                 <div class="service-box-title">طراحی و تولید بازی دیجیتال</div>
                             </div>
                             <div class="service-box-desc">
@@ -2586,9 +2610,8 @@
                             </div>
                         </div>
 
-                        <div class="service-box-card">
+                        <div class="service-box-card"><img class="service-box-img" src="images/site/service-prototype.webp" alt="" loading="lazy" decoding="async">
                             <div class="service-box-header">
-                                <div class="service-box-icon">⚙️</div>
                                 <div class="service-box-title">ساخت پروتوتایپ تعاملی</div>
                             </div>
                             <div class="service-box-desc">
@@ -2596,9 +2619,8 @@
                             </div>
                         </div>
 
-                        <div class="service-box-card">
+                        <div class="service-box-card"><img class="service-box-img" src="images/site/service-educational.webp" alt="" loading="lazy" decoding="async">
                             <div class="service-box-header">
-                                <div class="service-box-icon">🎓</div>
                                 <div class="service-box-title">تولید تجربه آموزشی یا فرهنگی</div>
                             </div>
                             <div class="service-box-desc">
@@ -2606,9 +2628,8 @@
                             </div>
                         </div>
 
-                        <div class="service-box-card">
+                        <div class="service-box-card"><img class="service-box-img" src="images/site/service-consulting.webp" alt="" loading="lazy" decoding="async">
                             <div class="service-box-header">
-                                <div class="service-box-icon">💡</div>
                                 <div class="service-box-title">مشاوره و اجرای پروژه‌های فناوری تعاملی</div>
                             </div>
                             <div class="service-box-desc">
@@ -2651,7 +2672,7 @@
                             <!-- Project 1: Mepel -->
                             <div class="project-modern-card" data-category="ar">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/project_mepel_ar_1790779265402.jpg" alt="پروژه واقعیت افزوده Mepel" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-mepel.webp" alt="پروژه واقعیت افزوده Mepel" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge">واقعیت افزوده AR</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2674,7 +2695,7 @@
                             <!-- Project 2: الفباشی -->
                             <div class="project-modern-card" data-category="ar">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/project_alefbashi_edu_1790779279075.jpg" alt="پروژه الفباشی بازی آموزشی واقعیت افزوده" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-alefbashi.webp" alt="پروژه الفباشی بازی آموزشی واقعیت افزوده" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge gold">بازی آموزشی AR</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2697,7 +2718,7 @@
                             <!-- Project 3: Cells -->
                             <div class="project-modern-card" data-category="ai">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/project_ai_film_1790779302123.jpg" alt="انیمیشن هوش مصنوعی Cells" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-cells.webp" alt="انیمیشن هوش مصنوعی Cells" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge purple">انیمیشن هوش مصنوعی</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2720,7 +2741,7 @@
                             <!-- Project 4: Restart -->
                             <div class="project-modern-card" data-category="ai">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/spiritual_metaverse_1789141593694.jpg" alt="انیمیشن هوش مصنوعی Restart" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-restart.webp" alt="انیمیشن هوش مصنوعی Restart" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge purple">انیمیشن هوش مصنوعی</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2743,7 +2764,7 @@
                             <!-- Project 5: قاصدک -->
                             <div class="project-modern-card" data-category="ai">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/project_ai_film_1790779302123.jpg" alt="انیمیشن قاصدک" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-ghasedak.webp" alt="انیمیشن قاصدک" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge purple">انیمیشن هوش مصنوعی</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2766,7 +2787,7 @@
                             <!-- Project 6: وعده محقق -->
                             <div class="project-modern-card" data-category="ai">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/spiritual_metaverse_1789141593694.jpg" alt="فیلم کوتاه هوش مصنوعی وعده محقق" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-vadeh-mohaghagh.webp" alt="فیلم کوتاه هوش مصنوعی وعده محقق" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge purple">فیلم کوتاه هوش مصنوعی</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2789,7 +2810,7 @@
                             <!-- Project 7: رقیه خاتون -->
                             <div class="project-modern-card" data-category="vr">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/project_vr_sanctuary_1790779293365.jpg" alt="تجربه واقعیت مجازی رقیه خاتون" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-roghayeh-khatoon.webp" alt="تجربه واقعیت مجازی رقیه خاتون" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge">واقعیت مجازی VR</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2812,7 +2833,7 @@
                             <!-- Project 8: برگ -->
                             <div class="project-modern-card" data-category="vr">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/project_vr_sanctuary_1790779293365.jpg" alt="تجربه واقعیت مجازی برگ" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-barg.webp" alt="تجربه واقعیت مجازی برگ" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge">واقعیت مجازی VR</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2835,7 +2856,7 @@
                             <!-- Project 9: اَسماءُ الحُسنا (بدون فیلد دستاورد طبق دستور کاربر) -->
                             <div class="project-modern-card" data-category="vr">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/minimal_vr_headset_1789142033394.jpg" alt="بازی واقعیت مجازی اسماء الحسنی" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-asmaolhosna.webp" alt="بازی واقعیت مجازی اسماء الحسنی" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge">بازی واقعیت مجازی VR</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2854,7 +2875,7 @@
                             <!-- Project 10: زیارت -->
                             <div class="project-modern-card" data-category="vr">
                                 <div class="project-card-media">
-                                    <img src="/src/assets/images/project_vr_sanctuary_1790779293365.jpg" alt="تجربه واقعیت مجازی زیارت" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
+                                    <img src="images/site/project-ziyarat.webp" alt="تجربه واقعیت مجازی زیارت" loading="lazy" decoding="async" referrerPolicy="no-referrer" onerror="this.onerror=null; this.src='image.png';">
                                     <div class="project-card-badge">تجربه واقعیت مجازی VR</div>
                                 </div>
                                 <div class="project-card-body">
@@ -2885,7 +2906,7 @@
                         <!-- Member 1: ریحانه مختاری -->
                         <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="images/t.reyhane.jpg" alt="ریحانه مختاری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_reyhane_mokhtari_1790779970068.jpg';" />
+                            <img src="images/site/team-mokhtari.webp" alt="ریحانه مختاری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='images/t.reyhane.jpg';" />
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">ریحانه مختاری</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">کارشناس مارکتینگ دیجیتال</p>
@@ -2898,7 +2919,7 @@
                         <!-- Member 2: عبدالکریم منصوری -->
                         <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="images/t.mansouri.jpg" alt="عبدالکریم منصوری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_karim_mansouri_1790779983414.jpg';" />
+                            <img src="images/site/team-mansouri.webp" alt="عبدالکریم منصوری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='images/t.mansouri.jpg';" />
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">عبدالکریم منصوری</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">مدیر تولید و کارگردان</p>
@@ -2911,7 +2932,7 @@
                         <!-- Member 3: سیده مریم طباطبایی -->
                         <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="images/t.tabatabaei.jpg" alt="سیده مریم طباطبایی" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_maryam_tabatabaei_1790780013997.jpg';" />
+                            <img src="images/site/team-tabatabaei.webp" alt="سیده مریم طباطبایی" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='images/t.tabatabaei.jpg';" />
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">سیده مریم طباطبایی</h3>
                                 <p class="team-holo-role" style="color: var(--accent-gold);">مدیر مجموعه و رهبر فنی</p>
@@ -2924,7 +2945,7 @@
                         <!-- Member 4: علیرضا روحیان -->
                         <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="images/t.rouhian.jpg" alt="علیرضا روحیان" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_alireza_rouhian_1790780031182.jpg';" />
+                            <img src="images/site/team-rouhian.webp" alt="علیرضا روحیان" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='images/t.rouhian.jpg';" />
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">علیرضا روحیان</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">طراح ارشد سه‌بعدی و Technical Artist</p>
@@ -2937,7 +2958,7 @@
                         <!-- Member 5: سید محمد فخری -->
                         <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="images/t.fakhri.jpg" alt="سید محمد فخری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/src/assets/images/t_mohammad_fakhri_1790780044662.jpg';" />
+                            <img src="images/site/team-fakhri.webp" alt="سید محمد فخری" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='images/t.fakhri.jpg';" />
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">سید محمد فخری</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">کارشناس تحقیق و توسعه</p>
