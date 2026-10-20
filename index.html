@@ -27,8 +27,8 @@
     <meta name="twitter:image" content="image.png">
     
     <!-- Favicon & PWA Icons -->
-    <link rel="icon" type="image/png" href="image.png">
-    <link rel="apple-touch-icon" href="image.png">
+    <link rel="icon" type="image/png" href="images/site/sadidar-symbol.png">
+    <link rel="apple-touch-icon" href="images/site/sadidar-symbol.png">
     <meta name="theme-color" content="#05080e">
 
     <!-- Schema.org Structured Data (JSON-LD) for Google & Rich Search Results -->
@@ -1958,6 +1958,16 @@
             transform: scale(1.1);
         }
 
+        .team-rouhian-image {
+            object-position: center top !important;
+            height: 114% !important;
+            margin-top: -12% !important;
+        }
+
+        .team-holo-card:hover .team-rouhian-image {
+            transform: scale(1.08) !important;
+        }
+
         .team-holo-overlay {
             position: absolute;
             bottom: 0;
@@ -2320,7 +2330,7 @@
     <header id="mainHeader">
         <div class="logo-container" onclick="goToSlide(0)" style="cursor: pointer;">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <img src="image.png" alt="Sadidar Logo" style="height: 44px; object-fit: contain; filter: drop-shadow(0 0 12px rgba(33,185,198,0.6));">
+                <img src="images/site/sadidar-symbol.png" alt="لوگوی استودیو سدیدار" style="height: 46px; object-fit: contain; filter: drop-shadow(0 0 12px rgba(33,185,198,0.6));">
                 <div style="display: flex; flex-direction: column; align-items: flex-start; text-align: right;">
                     <span style="font-size: 1.55rem; font-weight: 900; letter-spacing: 1px; color: white;">سدیدار</span>
                     <span style="font-size: 0.62rem; letter-spacing: 4px; color: var(--text-muted); text-transform: uppercase;">S A D I D A R</span>
@@ -2360,7 +2370,7 @@
         <div class="mobile-nav-content">
             <div class="mobile-nav-header">
                 <div style="display: flex; align-items: center; gap: 12px;">
-                    <img src="image.png" alt="Sadidar Logo" style="height: 38px; object-fit: contain;">
+                    <img src="images/site/sadidar-symbol.png" alt="لوگوی استودیو سدیدار" style="height: 38px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(33,185,198,0.5));">
                     <div style="display: flex; flex-direction: column;">
                         <span style="font-size: 1.3rem; font-weight: 800; color: white;">سدیدار</span>
                         <span style="font-size: 0.62rem; letter-spacing: 2px; color: var(--accent-teal);">SADIDAR STUDIO</span>
@@ -2910,9 +2920,6 @@
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">ریحانه مختاری</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">کارشناس مارکتینگ دیجیتال</p>
-                                <div class="team-expertise-box">
-                                    استراتژی دیجیتال مارکتینگ، تحلیل رفتار مخاطب و مدیریت ارتباطات برند
-                                </div>
                             </div>
                         </div>
 
@@ -2923,9 +2930,6 @@
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">عبدالکریم منصوری</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">مدیر تولید و کارگردان</p>
-                                <div class="team-expertise-box">
-                                    کارگردانی چندرسانه‌ای، مدیریت تولید هنری و روایت‌پردازی تعاملی
-                                </div>
                             </div>
                         </div>
 
@@ -2936,22 +2940,16 @@
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">سیده مریم طباطبایی</h3>
                                 <p class="team-holo-role" style="color: var(--accent-gold);">مدیر مجموعه و رهبر فنی</p>
-                                <div class="team-expertise-box">
-                                    معماری سیستم‌های تعاملی XR، مدیریت راهبردی و هدایت تیم‌های فنی
-                                </div>
                             </div>
                         </div>
 
                         <!-- Member 4: علیرضا روحیان -->
                         <div class="team-holo-card">
                             <div class="holo-scanline"></div>
-                            <img src="images/site/team-rouhian.webp" alt="علیرضا روحیان" class="team-holo-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='images/t.rouhian.jpg';" />
+                            <img src="images/site/team-rouhian.webp" alt="علیرضا روحیان" class="team-holo-image team-rouhian-image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='images/t.rouhian.jpg';" />
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">علیرضا روحیان</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">طراح ارشد سه‌بعدی و Technical Artist</p>
-                                <div class="team-expertise-box">
-                                    مدلسازی تخصصی سه‌بعدی، شیدرسازی و رندرینگ بلادرنگ موتورهای بازی
-                                </div>
                             </div>
                         </div>
 
@@ -2962,9 +2960,6 @@
                             <div class="team-holo-overlay">
                                 <h3 class="team-holo-name interactive-text">سید محمد فخری</h3>
                                 <p class="team-holo-role" style="color: var(--accent-teal);">کارشناس تحقیق و توسعه</p>
-                                <div class="team-expertise-box">
-                                    پژوهش الگوریتم‌های نوظهور، هوش مصنوعی مولد و توسعه تجارب نوین
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -3032,7 +3027,7 @@
 
         <footer>
         <div class="timeline-wrapper">
-            <button class="nav-btn-circle" onclick="nextSlide()" title="Next">&#8594;</button>
+            <button class="nav-btn-circle" id="btnPrevSlide" onclick="prevSlide()" title="اسلاید قبلی" aria-label="اسلاید قبلی">&#8594;</button>
             
             <div class="timeline-line-bg">
                 <div class="timeline-line-fill" id="progress-fill"></div>
@@ -3047,7 +3042,7 @@
                 <div class="timeline-node" onclick="goToSlide(5)"><span>06</span></div>
             </div>
 
-            <button class="nav-btn-circle" onclick="prevSlide()" title="Prev">&#8592;</button>
+            <button class="nav-btn-circle" id="btnNextSlide" onclick="nextSlide()" title="اسلاید بعدی" aria-label="اسلاید بعدی">&#8592;</button>
         </div>
     </footer>
 
@@ -3095,16 +3090,25 @@
             if (window.innerWidth > 1024) {
                 targetTranslateX = currentSlide * 100;
                 // Lerp formula: current = current + (target - current) * ease
-                currentTranslateX += (targetTranslateX - currentTranslateX) * 0.06;
-                slider.style.transform = `translateX(${currentTranslateX}vw)`;
+                const diff = targetTranslateX - currentTranslateX;
+                if (Math.abs(diff) > 0.005) {
+                    currentTranslateX += diff * 0.085;
+                    slider.style.transform = `translateX(${currentTranslateX}vw)`;
+                } else if (currentTranslateX !== targetTranslateX) {
+                    currentTranslateX = targetTranslateX;
+                    slider.style.transform = `translateX(${currentTranslateX}vw)`;
+                }
             } else {
-                slider.style.transform = 'none';
+                if (slider.style.transform !== 'none') {
+                    slider.style.transform = 'none';
+                }
                 currentTranslateX = 0;
                 targetTranslateX = 0;
             }
             requestAnimationFrame(smoothScrollLoop);
         }
         smoothScrollLoop(); // Start the loop
+        updateUI(); // Initial UI sync
 
         function updateUI() {
             // آپدیت پروگرس‌بار و تایم‌لاین
@@ -3112,6 +3116,18 @@
             if (fill) {
                 const percentage = (currentSlide / (totalSlides - 1)) * 100;
                 fill.style.width = `${percentage}%`;
+            }
+
+            // وضعیت دکمه‌های ناوبری چپ و راست فوتر
+            const btnPrev = document.getElementById('btnPrevSlide');
+            const btnNext = document.getElementById('btnNextSlide');
+            if (btnPrev) {
+                btnPrev.style.opacity = currentSlide === 0 ? '0.35' : '1';
+                btnPrev.style.pointerEvents = currentSlide === 0 ? 'none' : 'auto';
+            }
+            if (btnNext) {
+                btnNext.style.opacity = currentSlide === totalSlides - 1 ? '0.35' : '1';
+                btnNext.style.pointerEvents = currentSlide === totalSlides - 1 ? 'none' : 'auto';
             }
 
             // آپدیت لینک‌های هدر دسکتاپ
@@ -3251,7 +3267,7 @@
         let mouseY = -1000;
         
         
-        const NUM_PARTICLES = 160;
+        const NUM_PARTICLES = window.innerWidth <= 1024 ? 40 : 100;
         class Particle {
             constructor(index) {
                 this.x = Math.random() * width;
@@ -3297,10 +3313,11 @@
                 // Interactive mouse repulsion (Magnetic force)
                 const dxMouse = this.x - mouseX;
                 const dyMouse = this.y - mouseY;
-                const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                const distMouseSq = dxMouse * dxMouse + dyMouse * dyMouse;
                 const interactionRadius = 200;
 
-                if (distMouse < interactionRadius) {
+                if (distMouseSq < 40000 && distMouseSq > 0) {
+                    const distMouse = Math.sqrt(distMouseSq);
                     const force = (interactionRadius - distMouse) / interactionRadius;
                     this.vx += (dxMouse / distMouse) * force * 2.5; // push away strongly
                     this.vy += (dyMouse / distMouse) * force * 2.5;
@@ -3339,11 +3356,8 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(33, 185, 198, 0.8)';
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = 'rgba(33, 185, 198, 0.5)';
+                ctx.fillStyle = 'rgba(33, 185, 198, 0.85)';
                 ctx.fill();
-                ctx.shadowBlur = 0; // reset for lines
             }
         }
         for(let i=0; i<NUM_PARTICLES; i++) particles.push(new Particle(i));
@@ -3351,19 +3365,23 @@
         
         function animateTech() {
             ctx.clearRect(0, 0, width, height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            for(let i=0; i<particles.length; i++) {
-                for(let j=i+1; j<particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
-                    if(dist < 150) {
+            const pLen = particles.length;
+            for (let i = 0; i < pLen; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            for(let i=0; i<pLen; i++) {
+                const pi = particles[i];
+                for(let j=i+1; j<pLen; j++) {
+                    const pj = particles[j];
+                    const dx = pi.x - pj.x;
+                    const dy = pi.y - pj.y;
+                    const distSq = dx*dx + dy*dy;
+                    if(distSq < 22500) {
+                        const dist = Math.sqrt(distSq);
                         ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.moveTo(pi.x, pi.y);
+                        ctx.lineTo(pj.x, pj.y);
                         ctx.strokeStyle = `rgba(33, 185, 198, ${0.15 - dist/1000})`;
                         ctx.stroke();
                     }
@@ -3373,35 +3391,7 @@
         }
         animateTech();
 
-        // --- Smoke Parallax & Mouse Move ---
-        document.addEventListener('mousemove', (e) => {
-            // Update particle mouse pos
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            // Smoke Parallax
-            const x = (e.clientX / window.innerWidth - 0.5) * 80; // offset amount
-            const y = (e.clientY / window.innerHeight - 0.5) * 50;
-            
-            const s1 = document.getElementById('smoke-layer-1');
-            const s2 = document.getElementById('smoke-layer-2');
-            
-            if(s1) s1.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
-            if(s2) s2.style.transform = `translate(${-x * 0.6}px, ${y * 0.6}px) scale(1.15)`;
-        });
-        
-        document.addEventListener('mouseleave', () => {
-            mouseX = -1000;
-            mouseY = -1000;
-        });
-        
-        window.addEventListener('resize', () => {
-            updateUI();
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        });
-
-            // --- Custom Cursor ---
+        // --- Mouse Tracking & Custom Cursor ---
         const cursorDot = document.getElementById('custom-cursor-dot');
         const cursorGlow = document.getElementById('custom-cursor-glow');
         let cx = window.innerWidth / 2;
@@ -3412,12 +3402,32 @@
         let targetGlowScale = 1;
 
         document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
             cx = e.clientX;
             cy = e.clientY;
             if(cursorDot) {
                 cursorDot.style.transform = `translate(${cx}px, ${cy}px)`;
             }
+        }, { passive: true });
+        
+        document.addEventListener('mouseleave', () => {
+            mouseX = -1000;
+            mouseY = -1000;
+            if(cursorDot) cursorDot.style.opacity = '0';
+            if(cursorGlow) cursorGlow.style.opacity = '0';
         });
+        
+        document.addEventListener('mouseenter', () => {
+            if(cursorDot) cursorDot.style.opacity = '1';
+            if(cursorGlow) cursorGlow.style.opacity = '1';
+        });
+
+        window.addEventListener('resize', () => {
+            updateUI();
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }, { passive: true });
 
         function animateCustomCursor() {
             gx += (cx - gx) * 0.15;
@@ -3427,18 +3437,20 @@
             if(cursorGlow) {
                 cursorGlow.style.transform = `translate(${gx}px, ${gy}px) scale(${glowScale})`;
             }
+
+            // Smoke Parallax synced with RAF
+            const s1 = document.getElementById('smoke-layer-1');
+            const s2 = document.getElementById('smoke-layer-2');
+            if(s1 || s2) {
+                const sx = (gx / window.innerWidth - 0.5) * 80;
+                const sy = (gy / window.innerHeight - 0.5) * 50;
+                if(s1) s1.style.transform = `translate(${sx}px, ${sy}px) scale(1.1)`;
+                if(s2) s2.style.transform = `translate(${-sx * 0.6}px, ${sy * 0.6}px) scale(1.15)`;
+            }
+
             requestAnimationFrame(animateCustomCursor);
         }
         animateCustomCursor();
-
-        document.addEventListener('mouseenter', () => {
-            if(cursorDot) cursorDot.style.opacity = '1';
-            if(cursorGlow) cursorGlow.style.opacity = '1';
-        });
-        document.addEventListener('mouseleave', () => {
-            if(cursorDot) cursorDot.style.opacity = '0';
-            if(cursorGlow) cursorGlow.style.opacity = '0';
-        });
 
         function initCursorHovers() {
             const clickables = document.querySelectorAll('a, button, .card, .timeline-node, .nav-link, .nav-btn-circle, .header-left, .logo-container, .team-holo-card, .project-creative-card, .services-menu-item, .services-menu-item');
